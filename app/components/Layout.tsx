@@ -4,6 +4,7 @@ import logo from '../../assets/profile.svg';
 import gradient1 from '../../assets/gradient1.svg';
 import gradient2 from '../../assets/gradient2.svg';
 import gradient3 from '../../assets/gradient3.svg';
+import Navigation from './Navigation';
 
 interface Props {
   children: React.ReactNode;
@@ -19,7 +20,8 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
           <div className='mt-36 flex z-10'>
             <div className='flex flex-col items-center mr-32'>
                 <img src={logo} alt='profile' className='w-20 h-20 min-w-max z-10' />
-                <Text className='text-white font-sans mt-4 z-10'>@darrenBaldwin03</Text>
+                <Text className='text-white mt-4 z-10 font-regular font-sans'>@darrenBaldwin03</Text>
+                <Navigation />
             </div>
             {children}
           </div>

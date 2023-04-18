@@ -1,13 +1,13 @@
 import React from 'react';
 
-function Blog() {
+function Chat() {
     return (
         <div>
             <h1 className="text-white">
-                This is the blog page
+                Chat page!
             </h1>
         </div>
     )
 }
 
-export default Blog;
+export default Chat;
