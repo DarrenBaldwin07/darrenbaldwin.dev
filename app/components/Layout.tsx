@@ -20,7 +20,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
           <div className='mt-36 flex z-10'>
             <div className='flex flex-col items-center mr-32'>
                 <img src={logo} alt='profile' className='w-20 h-20 min-w-max z-10' />
-                <Text className='text-white mt-4 z-10 font-regular font-sans'>@darrenBaldwin03</Text>
+                <Text className='text-white mt-4 z-10 font-regular font-sans mb-12'>@darrenBaldwin03</Text>
                 <Navigation />
             </div>
             {children}

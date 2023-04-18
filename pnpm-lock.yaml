@@ -13,6 +13,7 @@ specifiers:
   '@types/react-dom': ^18.0.8
   cross-env: ^7.0.3
   eslint: ^8.27.0
+  framer-motion: ^10.12.2
   isbot: ^3.6.5
   react: ^18.2.0
   react-dom: ^18.2.0
@@ -26,6 +27,7 @@ dependencies:
   '@remix-run/node': 1.15.0
   '@remix-run/react': 1.15.0_biqbaboplfbrettd7655fr4n2y
   cross-env: 7.0.3
+  framer-motion: 10.12.2_biqbaboplfbrettd7655fr4n2y
   isbot: 3.6.8
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -4288,6 +4290,24 @@ packages:
     resolution: {integrity: sha512-buRG0fpBtRHSTCOASe6hD258tEubFoRLb4ZNA6NxMVHNw2gOcwHo9wyablzMzOA5z9xA9L1KNjk/Nt6MT9aYow==}
     engines: {node: '>= 0.6'}
     dev: true
+
+  /framer-motion/10.12.2_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-DD3Ieqy4pjmL0qBtfNMqnU/IONchUqnhHtgFtu0Nq5jw7bhkksD/Cs4cNhLYd1vs7iB8Q+WInxuBeMmzIoA5Xg==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      tslib: 2.5.0
+    optionalDependencies:
+      '@emotion/is-prop-valid': 0.8.8
+    dev: false
 
   /framer-motion/9.1.7_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-nKxBkIO4IPkMEqcBbbATxsVjwPYShKl051yhBv9628iAH6JLeHD0siBHxkL62oQzMC1+GNX73XtPjgP753ufuw==}
