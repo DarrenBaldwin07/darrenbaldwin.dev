@@ -1,6 +1,6 @@
 import { Heading, Text } from '@rapid-web/ui';
 import { useLoaderData } from "@remix-run/react";
-import { json } from '@remix-run/node';
+import { json, defer } from '@remix-run/node';
 import { formatNumber, getMostUsedLanguage } from '~/helpers';
 import Github from '../../assets/github.svg';
 import Twitter from '../../assets/twitter.svg';
