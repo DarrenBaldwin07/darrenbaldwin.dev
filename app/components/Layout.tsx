@@ -13,8 +13,8 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }: Props) => {
   return (
     <div className='overflow-hidden relative h-screen'>
-        <img src={gradient1} alt='gradient1' className='absolute -right-[250px] top-[200px] overflow-hidden' />
-        <img src={gradient2} alt='gradient2' className='absolute -left-[300px] -bottom-[400px] overflow-hidden' />
+        <img src={gradient1} alt='gradient1' className='absolute -right-[400px] top-[200px] overflow-hidden' />
+        <img src={gradient2} alt='gradient2' className='absolute -left-[400px] -bottom-[550px] overflow-hidden' />
         <img src={gradient3} alt='gradient3' className='absolute -top-[200px] lg:-top-[850px] sm:-top-[300px] md:-top-[400px] left-1/2 -translate-x-1/2 overflow-hidden' />
         <Container maxWidth='sm' styles='z-10'>
           <div className='mt-36 flex z-10'>

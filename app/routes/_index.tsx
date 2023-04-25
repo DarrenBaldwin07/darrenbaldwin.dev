@@ -2,11 +2,11 @@ import { Heading, Text } from '@rapid-web/ui';
 import { useLoaderData } from "@remix-run/react";
 import { json } from '@remix-run/node';
 import { formatNumber, getMostUsedLanguage } from '~/helpers';
+import SocialLink from '~/components/SocialLink';
 import Github from '../../assets/github.svg';
 import Twitter from '../../assets/twitter.svg';
 import Code from '../../assets/terminalSolid.svg';
-import LinkIcon from '../../assets/arrow-up-right-from-square-solid.svg';
-import LinkedIn from '../../assets/linkedin.svg'
+import LinkedIn from '../../assets/linkedin.svg';
 
 
 export async function loader() {
@@ -88,33 +88,9 @@ export default function Index() {
         </div>
         <Text styles='text-white font-sans mt-8'>I contribute and maintain various open source projects and am very passionate about fullstack web development and performance with tools like <strong>Typescript</strong> and <strong>Rust</strong>. I’m also an advisor and future Angel Investor in early stage startups</Text>
         <div className='mt-12 flex items-center space-x-6'>
-          <a href="https://github.com/DarrenBaldwin07" target='_blank' rel='noreferrer'>
-              <div className='bg-background border border-backgroundSecondary hover:bg-[#22272C] transition ease-linear p-4 rounded-lg flex items-center justify-between w-52'>
-                <div className='flex items-center'>
-                  <img width={26} src={Github} alt='github' />
-                  <Text styles='text-white ml-2'>Github</Text>
-                </div>
-                <img src={LinkIcon} width={15} alt='link' />
-              </div>
-          </a>
-          <a href="https://twitter.com/DarrenBaldwin03" target='_blank' rel='noreferrer'>
-              <div className='bg-background border border-backgroundSecondary hover:bg-[#22272C] transition ease-linear p-4 rounded-lg flex items-center justify-between w-52'>
-                <div className='flex items-center'>
-                  <img width={26} src={Twitter} alt='twitter' />
-                  <Text styles='text-white ml-2'>Twitter</Text>
-                </div>
-                <img src={LinkIcon} width={15} alt='link' />
-              </div>
-          </a>
-          <a href="https://www.linkedin.com/in/real-darren-baldwin/" target='_blank' rel='noreferrer'>
-              <div className='bg-background border border-backgroundSecondary hover:bg-[#22272C] transition ease-linear p-4 rounded-lg flex items-center justify-between w-52'>
-                <div className='flex items-center'>
-                  <img width={24} src={LinkedIn} alt='linkedin' />
-                  <Text styles='text-white ml-2'>LinkedIn</Text>
-                </div>
-                <img src={LinkIcon} width={15} alt='link' />
-              </div>
-          </a>
+          <SocialLink url='https://github.com/DarrenBaldwin07' image={Github} title='Github' />
+          <SocialLink url='https://twitter.com/DarrenBaldwin03' image={Twitter} title='Twitter' />
+          <SocialLink url='https://www.linkedin.com/in/real-darren-baldwin/' image={LinkedIn} title='LinkedIn' />
         </div>
     </div>
   );
