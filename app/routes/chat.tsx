@@ -1,9 +1,12 @@
 import React from 'react';
+import { Heading, Text } from '@rapid-web/ui';
 
 function Chat() {
 	return (
-		<div>
-			<h1 className='text-white'>Chat page!</h1>
+		<div className='z-10'>
+			<Heading styles='text-white text-3xl tracking-widest font-extrabold'>
+				Chat
+			</Heading>
 		</div>
 	);
 }

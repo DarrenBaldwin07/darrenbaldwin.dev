@@ -2,6 +2,11 @@ import React from 'react';
 import { Heading, Text } from '@rapid-web/ui';
 
 
+export async function loader() {
+	return null
+}
+
+
 function Oss() {
 	return (
 		<div className='z-10'>
