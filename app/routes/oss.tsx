@@ -3,9 +3,8 @@ import { Heading, Text } from '@rapid-web/ui';
 import { motion } from 'framer-motion';
 
 export async function loader() {
-	return null
+	return null;
 }
-
 
 function Oss() {
 	return (
@@ -31,10 +30,8 @@ function Oss() {
 				<Heading styles='text-white text-3xl tracking-widest font-extrabold'>
 					Projects
 				</Heading>
-
 			</div>
 		</motion.div>
-
 	);
 }
 

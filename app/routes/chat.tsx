@@ -28,7 +28,6 @@ function Chat() {
 				</Heading>
 			</div>
 		</motion.div>
-
 	);
 }
 

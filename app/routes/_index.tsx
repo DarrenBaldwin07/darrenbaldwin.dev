@@ -9,7 +9,6 @@ import Code from '../../assets/terminalSolid.svg';
 import LinkedIn from '../../assets/linkedin.svg';
 import { motion } from 'framer-motion';
 
-
 export async function loader() {
 	const headers = {
 		Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
@@ -106,7 +105,8 @@ export default function Index() {
 							Cincinnati Ventures
 						</a>
 					</Text>
-					, a venture backed company building the startups of tomorrow.
+					, a venture backed company building the startups of
+					tomorrow.
 				</Text>
 				<div className='flex flex-col mt-8 space-y-6'>
 					<div className='flex space-x-2 items-center'>
@@ -128,9 +128,9 @@ export default function Index() {
 					</div>
 				</div>
 				<Text styles='text-white font-sans mt-8'>
-					I contribute and maintain various open source projects and am
-					very passionate about fullstack web development and performance
-					with tools like <strong>Typescript</strong> and{' '}
+					I contribute and maintain various open source projects and
+					am very passionate about fullstack web development and
+					performance with tools like <strong>Typescript</strong> and{' '}
 					<strong>Rust</strong>. I’m also an advisor and future Angel
 					Investor in early stage startups
 				</Text>

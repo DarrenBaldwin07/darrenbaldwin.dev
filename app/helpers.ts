@@ -38,7 +38,4 @@ export async function getMostUsedLanguage(username: string): Promise<string> {
 	return mostUsedLanguage;
 }
 
-
-export const getProjects = async () => {
-
-}
+export const getProjects = async () => {};
