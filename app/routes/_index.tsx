@@ -1,4 +1,4 @@
-import { Heading, Text, Tooltip } from '@rapid-web/ui';
+import { Heading, Text } from '@rapid-web/ui';
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
 import { formatNumber, getMostUsedLanguage } from '~/helpers';
@@ -8,6 +8,8 @@ import Twitter from '../../assets/twitter.svg';
 import Code from '../../assets/terminalSolid.svg';
 import LinkedIn from '../../assets/linkedin.svg';
 import { motion } from 'framer-motion';
+import Star from '../../assets/star-solid.svg';
+import UnStar from '../../assets/star-regular.svg';
 
 
 export async function loader() {
@@ -89,9 +91,14 @@ export default function Index() {
 			className='z-10'
 		>
 			<div>
-				<Heading styles='text-white text-3xl tracking-widest font-extrabold z-10'>
-					Darren Baldwin
-				</Heading>
+				<div className='flex items-center justify-between'>
+					<Heading styles='text-white text-3xl tracking-widest font-extrabold z-10'>
+						Darren Baldwin
+					</Heading>
+					<div className='bg-background border border-backgroundSecondary p-2 rounded-lg flex items-center justify-center'>
+						<img src={UnStar} alt='un-star' width={22}/>
+					</div>
+				</div>
 				<Text className='text-white font-sans mt-4 z-10'>
 					Hey, I’m Darren. I am the Co-founder of{' '}
 					<Text as='span' styles='font-bold'>

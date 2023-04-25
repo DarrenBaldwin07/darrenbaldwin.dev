@@ -17,6 +17,7 @@ export default {
 			colors: {
 				background: '#1D2125',
 				backgroundSecondary: '#31383F',
+				star: '#E3B341'
 			},
 		}),
 	},

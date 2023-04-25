@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Text } from '@rapid-web/ui';
+import { Container, Text, Tooltip } from '@rapid-web/ui';
 import logo from '../../assets/profile.svg';
 import gradient1 from '../../assets/gradient1.svg';
 import gradient2 from '../../assets/gradient2.svg';
