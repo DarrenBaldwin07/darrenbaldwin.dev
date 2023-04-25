@@ -7,6 +7,8 @@ import Github from '../../assets/github.svg';
 import Twitter from '../../assets/twitter.svg';
 import Code from '../../assets/terminalSolid.svg';
 import LinkedIn from '../../assets/linkedin.svg';
+import { motion } from 'framer-motion';
+
 
 export async function loader() {
 	const headers = {
@@ -68,67 +70,86 @@ export async function loader() {
 export default function Index() {
 	const data = useLoaderData();
 	return (
-		<div className='z-10'>
-			<Heading styles='text-white text-3xl tracking-widest font-extrabold z-10'>
-				Darren Baldwin
-			</Heading>
-			<Text className='text-white font-sans mt-4 z-10'>
-				Hey, I’m Darren. I am the Co-founder of{' '}
-				<Text as='span' styles='font-bold'>
-					<a
-						rel='noreferrer'
-						className='hover:underline decoration-solid'
-						href='https://cincinnati.ventures'
-						target='_blank'
-					>
-						Cincinnati Ventures
-					</a>
+		<motion.div
+			whileInView={{
+				opacity: 1,
+				x: 0,
+			}}
+			initial={{
+				x: 500,
+				opacity: 0,
+			}}
+			transition={{
+				duration: 0.25,
+				ease: 'easeInOut',
+			}}
+			exit={{
+				x: '-100%',
+			}}
+			className='z-10'
+		>
+			<div>
+				<Heading styles='text-white text-3xl tracking-widest font-extrabold z-10'>
+					Darren Baldwin
+				</Heading>
+				<Text className='text-white font-sans mt-4 z-10'>
+					Hey, I’m Darren. I am the Co-founder of{' '}
+					<Text as='span' styles='font-bold'>
+						<a
+							rel='noreferrer'
+							className='hover:underline decoration-solid'
+							href='https://cincinnati.ventures'
+							target='_blank'
+						>
+							Cincinnati Ventures
+						</a>
+					</Text>
+					, a venture backed company building the startups of tomorrow.
 				</Text>
-				, a venture backed company building the startups of tomorrow.
-			</Text>
-			<div className='flex flex-col mt-8 space-y-6'>
-				<div className='flex space-x-2 items-center'>
-					<img width={26} src={Github} alt='github' />
-					<Text styles='text-white'>
-						{formatNumber(data.totalContributions.toString())}{' '}
-						contributions in the last year
-					</Text>
+				<div className='flex flex-col mt-8 space-y-6'>
+					<div className='flex space-x-2 items-center'>
+						<img width={26} src={Github} alt='github' />
+						<Text styles='text-white'>
+							{formatNumber(data.totalContributions.toString())}{' '}
+							contributions in the last year
+						</Text>
+					</div>
+					<div className='flex space-x-2 items-center'>
+						<img width={26} src={Twitter} alt='twitter' />
+						<Text styles='text-white'>{400} all time tweets</Text>
+					</div>
+					<div className='flex space-x-2 items-center'>
+						<img width={26} src={Code} alt='code' />
+						<Text styles='text-white'>
+							Most used language: {data.mostUsedLanguage}
+						</Text>
+					</div>
 				</div>
-				<div className='flex space-x-2 items-center'>
-					<img width={26} src={Twitter} alt='twitter' />
-					<Text styles='text-white'>{400} all time tweets</Text>
-				</div>
-				<div className='flex space-x-2 items-center'>
-					<img width={26} src={Code} alt='code' />
-					<Text styles='text-white'>
-						Most used language: {data.mostUsedLanguage}
-					</Text>
+				<Text styles='text-white font-sans mt-8'>
+					I contribute and maintain various open source projects and am
+					very passionate about fullstack web development and performance
+					with tools like <strong>Typescript</strong> and{' '}
+					<strong>Rust</strong>. I’m also an advisor and future Angel
+					Investor in early stage startups
+				</Text>
+				<div className='mt-12 flex items-center space-x-6'>
+					<SocialLink
+						url='https://github.com/DarrenBaldwin07'
+						image={Github}
+						title='Github'
+					/>
+					<SocialLink
+						url='https://twitter.com/DarrenBaldwin03'
+						image={Twitter}
+						title='Twitter'
+					/>
+					<SocialLink
+						url='https://www.linkedin.com/in/real-darren-baldwin/'
+						image={LinkedIn}
+						title='LinkedIn'
+					/>
 				</div>
 			</div>
-			<Text styles='text-white font-sans mt-8'>
-				I contribute and maintain various open source projects and am
-				very passionate about fullstack web development and performance
-				with tools like <strong>Typescript</strong> and{' '}
-				<strong>Rust</strong>. I’m also an advisor and future Angel
-				Investor in early stage startups
-			</Text>
-			<div className='mt-12 flex items-center space-x-6'>
-				<SocialLink
-					url='https://github.com/DarrenBaldwin07'
-					image={Github}
-					title='Github'
-				/>
-				<SocialLink
-					url='https://twitter.com/DarrenBaldwin03'
-					image={Twitter}
-					title='Twitter'
-				/>
-				<SocialLink
-					url='https://www.linkedin.com/in/real-darren-baldwin/'
-					image={LinkedIn}
-					title='LinkedIn'
-				/>
-			</div>
-		</div>
+		</motion.div>
 	);
 }
