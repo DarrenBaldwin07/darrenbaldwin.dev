@@ -18,7 +18,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 	return (
 		<div className='overflow-hidden relative h-screen'>
 			<div onClick={() => setIsStarred(!isStarred)} className='bg-background border z-10 border-backgroundSecondary p-2 rounded-xl flex items-center justify-center hover:cursor-pointer w-max absolute right-[40px] top-[40px]'>
-				<img src={UnStar} alt='un-star' width={22}/>
+				<img src={isStarred ? Star : UnStar} alt='un-star' width={22}/>
 				<Text styles='text-white ml-2 mr-6'>{isStarred ? 'Starred' : 'Star'}</Text>
 				<div className='bg-backgroundSecondary p-1 rounded-full w-6 h-6 text-center flex items-center justify-center'>
 					<Text styles='text-white text-sm'>0</Text>
