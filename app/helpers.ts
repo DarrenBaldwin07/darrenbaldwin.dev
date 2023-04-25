@@ -14,7 +14,7 @@ export async function getMostUsedLanguage(username: string): Promise<string> {
     const response = await res.json();
 
     response.forEach((repo: any) => {
-      if (repo.language) {
+      if (repo.language && !repo.private) {
         if (languages[repo.language]) {
           languages[repo.language]++;
         } else {

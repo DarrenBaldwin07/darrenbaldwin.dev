@@ -10,6 +10,10 @@ export default {
             fontFamily: {
                 'archivo': ['Archivo']
             },
+            colors: {
+                background: '#1D2125',
+                backgroundSecondary: '#31383F'
+            }
         })
     },
     plugins: [rapidPlugin({
