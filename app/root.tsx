@@ -1,43 +1,45 @@
 import {
-  Links,
-  LiveReload,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "@remix-run/react";
-import Layout from "./components/Layout";
+	Links,
+	LiveReload,
+	Meta,
+	Outlet,
+	Scripts,
+	ScrollRestoration,
+} from '@remix-run/react';
+import Layout from './components/Layout';
 import styles from './styles/index.css';
-import type { V2_MetaFunction } from "@remix-run/react";
+import type { V2_MetaFunction } from '@remix-run/react';
 
 // TODO: we should use wakatime api to show all time stats: https://wakatime.com/developers#all_time_since_today (these stats could be the three points on the homepage)
 
-
 export function links() {
-    return [{ rel: "stylesheet", href: styles }]
+	return [{ rel: 'stylesheet', href: styles }];
 }
 
 export const meta: V2_MetaFunction = () => {
-  return [{ title: "Darren Baldwin" }];
+	return [{ title: 'Darren Baldwin' }];
 };
 
 export default function App() {
-  return (
-    <html lang="en">
-      <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <Meta />
-        <Links />
-      </head>
-      <body>
-        <Layout>
-          <Outlet />
-        </Layout>
-        <ScrollRestoration />
-        <Scripts />
-        <LiveReload />
-      </body>
-    </html>
-  );
+	return (
+		<html lang='en'>
+			<head>
+				<meta charSet='utf-8' />
+				<meta
+					name='viewport'
+					content='width=device-width,initial-scale=1'
+				/>
+				<Meta />
+				<Links />
+			</head>
+			<body>
+				<Layout>
+					<Outlet />
+				</Layout>
+				<ScrollRestoration />
+				<Scripts />
+				<LiveReload />
+			</body>
+		</html>
+	);
 }
