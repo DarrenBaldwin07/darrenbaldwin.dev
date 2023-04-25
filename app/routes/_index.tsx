@@ -1,4 +1,4 @@
-import { Heading, Text } from '@rapid-web/ui';
+import { Heading, Text, Tooltip } from '@rapid-web/ui';
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
 import { formatNumber, getMostUsedLanguage } from '~/helpers';

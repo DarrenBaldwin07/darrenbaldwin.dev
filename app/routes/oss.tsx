@@ -31,6 +31,7 @@ function Oss() {
 				<Heading styles='text-white text-3xl tracking-widest font-extrabold'>
 					Projects
 				</Heading>
+
 			</div>
 		</motion.div>
 
