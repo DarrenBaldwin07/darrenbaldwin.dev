@@ -1,9 +1,13 @@
 import React from 'react';
+import { Heading, Text } from '@rapid-web/ui';
+
 
 function Oss() {
 	return (
-		<div>
-			<h1>Open Source Projects</h1>
+		<div className='z-10'>
+			<Heading styles='text-white text-3xl tracking-widest font-extrabold'>
+				Projects
+			</Heading>
 		</div>
 	);
 }
