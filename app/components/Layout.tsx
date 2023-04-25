@@ -1,18 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Text, Tooltip } from '@rapid-web/ui';
 import logo from '../../assets/profile.svg';
 import gradient1 from '../../assets/gradient1.svg';
 import gradient2 from '../../assets/gradient2.svg';
 import gradient3 from '../../assets/gradient3.svg';
 import Navigation from './Navigation';
+import Star from '../../assets/star-solid.svg';
+import UnStar from '../../assets/star-regular.svg';
 
 interface Props {
 	children: React.ReactNode;
 }
 
 const Layout: React.FC<Props> = ({ children }: Props) => {
+	const [isStarred, setIsStarred] = useState(false);
+
 	return (
 		<div className='overflow-hidden relative h-screen'>
+			<div onClick={() => setIsStarred(!isStarred)} className='bg-background border z-10 border-backgroundSecondary p-2 rounded-xl flex items-center justify-center hover:cursor-pointer w-max absolute right-[40px] top-[40px]'>
+				<img src={UnStar} alt='un-star' width={22}/>
+				<Text styles='text-white ml-2 mr-6'>{isStarred ? 'Starred' : 'Star'}</Text>
+				<div className='bg-backgroundSecondary p-1 rounded-full w-6 h-6 text-center flex items-center justify-center'>
+					<Text styles='text-white text-sm'>0</Text>
+				</div>
+			</div>
 			<img
 				src={gradient1}
 				alt='gradient1'
