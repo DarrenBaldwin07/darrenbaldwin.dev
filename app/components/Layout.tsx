@@ -24,7 +24,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 			>
 				<div
 					onClick={() => setIsStarred(!isStarred)}
-					className='bg-background border z-10 border-backgroundSecondary p-2 rounded-xl flex items-center justify-center hover:cursor-pointer w-max absolute right-[40px] top-[40px]'
+					className='bg-background border z-10 border-backgroundSecondary hover:border-[#4C5762] transition ease-linear p-2 rounded-xl flex items-center justify-center hover:cursor-pointer w-max absolute right-[40px] top-[40px]'
 				>
 					<img
 						src={isStarred ? Star : UnStar}

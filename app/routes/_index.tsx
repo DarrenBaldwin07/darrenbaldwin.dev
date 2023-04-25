@@ -132,7 +132,7 @@ export default function Index() {
 					am very passionate about fullstack web development and
 					performance with tools like <strong>Typescript</strong> and{' '}
 					<strong>Rust</strong>. I’m also an advisor and future Angel
-					Investor in early stage startups
+					Investor in early stage startups.
 				</Text>
 				<div className='mt-12 flex items-center space-x-6'>
 					<SocialLink
