@@ -7,7 +7,7 @@ specifiers:
   '@fortawesome/react-fontawesome': ^0.2.0
   '@netlify/functions': ^1.4.0
   '@rapid-web/react': ^0.1.2
-  '@rapid-web/ui': ^0.2.0
+  '@rapid-web/ui': ^0.2.1
   '@remix-run/dev': ^1.15.0
   '@remix-run/eslint-config': ^1.15.0
   '@remix-run/netlify': ^1.15.0
@@ -34,7 +34,7 @@ dependencies:
   '@fortawesome/react-fontawesome': 0.2.0_tumfstpptabomqiydababgzl3q
   '@netlify/functions': 1.4.0
   '@rapid-web/react': 0.1.2_biqbaboplfbrettd7655fr4n2y
-  '@rapid-web/ui': 0.2.0_biqbaboplfbrettd7655fr4n2y
+  '@rapid-web/ui': 0.2.1_biqbaboplfbrettd7655fr4n2y
   '@remix-run/netlify': 1.15.0_@netlify+functions@1.4.0
   '@remix-run/node': 1.15.0
   '@remix-run/react': 1.15.0_biqbaboplfbrettd7655fr4n2y
@@ -2011,8 +2011,8 @@ packages:
       - debug
     dev: false
 
-  /@rapid-web/ui/0.2.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-muCyqDJ4taVCc7UMLBiNCKwSR1wGXP6cRTSmci7GFo0kjH6heB8eAkafcRIwrvisNPNKWHon5fXPINFlZsHAfQ==}
+  /@rapid-web/ui/0.2.1_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-FujYGSvRgC2BGwh/oUAO814OlJM5AgiOVGhQn1XOUe5OOVh3/e9QUca+Smr4yElxvvQ5sekeLCsJRtiozHIdxg==}
     peerDependencies:
       react: '>=18.2.0'
       react-dom: '>=18.2.0'

@@ -16,7 +16,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 	const [isStarred, setIsStarred] = useState(false);
 
 	return (
-		<div className='overflow-hidden relative h-screen'>
+		<div className='overflow-hidden relative'>
 			<Tooltip
 				styles='bg-background border-backgroundSecondary'
 				label={isStarred ? '' : 'Star this portfolio!'}
@@ -54,7 +54,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 				alt='gradient3'
 				className='absolute -top-[200px] lg:-top-[850px] sm:-top-[300px] md:-top-[400px] left-1/2 -translate-x-1/2 overflow-hidden'
 			/>
-			<Container maxWidth='sm' styles='z-10'>
+			<Container maxWidth='sm' styles='z-10 pb-12'>
 				<div className='mt-36 flex z-10'>
 					<div className='flex flex-col items-center mr-32'>
 						<img

@@ -1,10 +1,11 @@
 import React from 'react';
-import { Heading, Text } from '@rapid-web/ui';
+import { Heading, VStack } from '@rapid-web/ui';
 import { motion } from 'framer-motion';
 import { getProjects } from '../helpers';
-import { useLoaderData } from '@remix-run/react';
+import { useLoaderData, useNavigate } from '@remix-run/react';
 import { json } from '@remix-run/node';
 import Repository from '~/components/Repository';
+import type { Repo } from '../helpers';
 
 export async function loader() {
 	const repoData = await getProjects();
@@ -12,7 +13,8 @@ export async function loader() {
 }
 
 function Oss() {
-	const repos = useLoaderData();
+	const repos: Repo[] = useLoaderData();
+	const navigate = useNavigate();
 	return (
 		<motion.div
 			whileInView={{
@@ -36,6 +38,11 @@ function Oss() {
 				<Heading styles='text-white text-3xl tracking-widest font-extrabold'>
 					Projects
 				</Heading>
+				<VStack styles='mt-6'>
+					{repos.map(({title, description, language, languageColor, url, stars}, index) => (
+						<Repository key={index} title={title} description={description} language={language} languageColor={languageColor} url={url} stars={stars} />
+					))}
+				</VStack>
 			</div>
 		</motion.div>
 	);

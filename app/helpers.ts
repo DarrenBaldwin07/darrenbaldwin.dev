@@ -537,7 +537,7 @@ function getLanguageColor(language: string): string {
 
 
 
-interface Repo {
+export interface Repo {
 	title: string;
 	description: string;
 	stars: number;
