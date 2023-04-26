@@ -1,12 +1,16 @@
 import React from 'react';
 import { Heading, Text } from '@rapid-web/ui';
 import { motion } from 'framer-motion';
+import { getProjects } from '../helpers';
+import { useLoaderData } from '@remix-run/react';
 
 export async function loader() {
+	const repoData = getProjects();
 	return null;
 }
 
 function Oss() {
+	const repos = useLoaderData();
 	return (
 		<motion.div
 			whileInView={{
