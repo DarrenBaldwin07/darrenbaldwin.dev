@@ -538,11 +538,12 @@ function getLanguageColor(language: string): string {
 
 
 interface Repo {
-	title: string,
-	description: string,
-	stars: number,
-	url: string,
-	language: string
+	title: string;
+	description: string;
+	stars: number;
+	url: string;
+	language: string;
+	languageColor: string;
 }
 
 export const getProjects = async () => {
@@ -567,7 +568,8 @@ export const getProjects = async () => {
 			description: data?.description,
 			stars: data?.stargazers_count,
 			url: data?.url,
-			language: data?.language
+			language: data?.language,
+			languageColor: getLanguageColor(data?.language)
 		}
 		return repo
 	});
