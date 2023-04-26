@@ -547,17 +547,20 @@ interface Repo {
 
 export const getProjects = async () => {
 	const baseUrl = 'https://api.github.com/repos/';
-	const repoList = ['Cincinnati-Ventures/rapid', 'Cincinnati-Ventures/clerk-rs', 'DarrenBaldwin07/darrenbaldwin.dev', 'Portt-dev/porttDotDev', 'Cincinnati-Ventures/vite-react-ts-template'];
+	const repoList = ['Cincinnati-Ventures/rapid', 'Cincinnati-Ventures/clerk-rs', 'DarrenBaldwin07/darrenbaldwin.dev', 'Cincinnati-Ventures/vite-react-ts-template'];
 
-	const repoData: Array<Repo> = [];
+	const repoData: Array<any> = [];
 
 	const headers = {
 		Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
 	};
 
-	repoList.forEach(async (repoUrl) => {
+
+	const repos = repoList.map(async (repoUrl) => {
 		const req = (await fetch(`${baseUrl}${repoUrl}`, {method: 'GET', headers }));
-		const data = await req.json();
+		const data = await req.json()
+
+		repoData.push(data);
 
 		const repo: Repo = {
 			title: data?.name,
@@ -565,10 +568,10 @@ export const getProjects = async () => {
 			stars: data?.stargazers_count,
 			url: data?.url,
 			language: data?.language
-		};
-
-		repoData.push(repo);
+		}
+		return repo
 	});
 
-	return repoData;
+
+	return Promise.all(repos)
 };

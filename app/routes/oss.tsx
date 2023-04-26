@@ -3,10 +3,12 @@ import { Heading, Text } from '@rapid-web/ui';
 import { motion } from 'framer-motion';
 import { getProjects } from '../helpers';
 import { useLoaderData } from '@remix-run/react';
+import { json } from '@remix-run/node';
+import Repository from '~/components/Repository';
 
 export async function loader() {
-	const repoData = getProjects();
-	return null;
+	const repoData = await getProjects();
+	return json(repoData);
 }
 
 function Oss() {
