@@ -1,6 +1,7 @@
 import React from 'react'
 import { Heading, Text, Button, Flex } from '@rapid-web/ui';
 import Github from '../../assets/github.svg';
+import GithubBlack from '../../assets/githubBlack.svg';
 
 interface Props {
     title: string;
@@ -25,7 +26,12 @@ const Repository = ({ title, description, stars, url, language, languageColor }:
                     <div className='h-4 w-4 rounded-full' style={{backgroundColor: languageColor}}  />
                     <Text styles='text-white'>{language}</Text>
                 </Flex>
-                <Button styles='w-max'>View on Github</Button>
+                <Button styles='w-max bg-white text-black hover:bg-[#E2E2E2] active:bg-[#E2E2E2] py-2 px-4'>
+                    <div className='flex items-center gap-2'>
+                        <img width={18} src={GithubBlack} alt='github' />
+                        View on Github
+                    </div>
+                </Button>
             </Flex>
         </div>
     </div>
