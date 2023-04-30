@@ -52,7 +52,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 			/>
 			<Container maxWidth='sm' styles='z-10 pb-12'>
 				<div className='mt-36 flex flex-col lg:flex-row z-10'>
-					<div className='flex flex-col items-center mr-32'>
+					<div className='flex flex-col items-center lg:mr-32 mb-12 lg:mb-0'>
 						<img
 							src={logo}
 							alt='profile'
