@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Container, Text, Tooltip } from '@rapid-web/ui';
 import logo from '../../assets/profile.svg';
 import gradient1 from '../../assets/gradient1.svg';
-import gradient2 from '../../assets/gradient2.svg';
 import gradient3 from '../../assets/gradient3.svg';
 import Navigation from './Navigation';
 import Star from '../../assets/star-solid.svg';

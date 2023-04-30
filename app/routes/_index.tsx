@@ -1,7 +1,7 @@
-import { Heading, Text } from '@rapid-web/ui';
+import { Heading, Text, Flex } from '@rapid-web/ui';
 import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
-import { formatNumber, getMostUsedLanguage } from '~/helpers';
+import { formatNumber, getMostUsedLanguage, getLanguageColor } from '~/helpers';
 import SocialLink from '~/components/SocialLink';
 import Github from '../../assets/github.svg';
 import Twitter from '../../assets/twitter.svg';
@@ -123,8 +123,12 @@ export default function Index() {
 					<div className='flex space-x-2 items-center'>
 						<img width={26} src={Code} alt='code' />
 						<Text styles='text-white'>
-							Most used language: {data.mostUsedLanguage}
+							Most used language:
 						</Text>
+						<Flex styles='items-center gap-2'>
+							<Text styles='text-white'>{data.mostUsedLanguage}</Text>
+							<div className='h-4 w-4 rounded-full' style={{backgroundColor: getLanguageColor(data.mostUsedLanguage)}}  />
+               			 </Flex>
 					</div>
 				</div>
 				<Text styles='text-white font-sans mt-8'>

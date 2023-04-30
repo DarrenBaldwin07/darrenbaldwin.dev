@@ -38,7 +38,7 @@ export async function getMostUsedLanguage(username: string): Promise<string> {
 	return mostUsedLanguage;
 }
 
-function getLanguageColor(language: string): string {
+export function getLanguageColor(language: string): string {
 	const languageColors: {[key: string]: string} = {
 	  "1C Enterprise": "#814CCC",
 	  "ABAP": "#E8274B",
