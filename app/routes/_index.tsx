@@ -118,7 +118,7 @@ export default function Index() {
 					</div>
 					<div className='flex space-x-2 items-center'>
 						<img width={26} src={Twitter} alt='twitter' />
-						<Text styles='text-white'>{400} all time tweets</Text>
+						<Text styles='text-white'>{412} all time tweets</Text>
 					</div>
 					<div className='flex space-x-2 items-center'>
 						<img width={26} src={Code} alt='code' />

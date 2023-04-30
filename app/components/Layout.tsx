@@ -51,7 +51,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 				className='absolute -top-[200px] lg:-top-[850px] sm:-top-[300px] md:-top-[400px] left-1/2 -translate-x-1/2 overflow-hidden'
 			/>
 			<Container maxWidth='sm' styles='z-10 pb-12'>
-				<div className='mt-36 flex z-10'>
+				<div className='mt-36 flex flex-col lg:flex-row z-10'>
 					<div className='flex flex-col items-center mr-32'>
 						<img
 							src={logo}
