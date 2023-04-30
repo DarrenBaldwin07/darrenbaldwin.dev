@@ -2,7 +2,7 @@ import React from 'react';
 import { Heading, VStack } from '@rapid-web/ui';
 import { motion } from 'framer-motion';
 import { getProjects } from '../helpers';
-import { useLoaderData, useNavigate } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 import { json } from '@remix-run/node';
 import Repository from '~/components/Repository';
 import type { Repo } from '../helpers';
@@ -14,7 +14,6 @@ export async function loader() {
 
 function Oss() {
 	const repos: Repo[] = useLoaderData();
-	const navigate = useNavigate();
 	return (
 		<motion.div
 			whileInView={{

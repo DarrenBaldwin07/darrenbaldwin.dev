@@ -567,7 +567,7 @@ export const getProjects = async () => {
 			title: data?.name,
 			description: data?.description,
 			stars: data?.stargazers_count,
-			url: data?.url,
+			url: data?.html_url,
 			language: data?.language,
 			languageColor: getLanguageColor(data?.language)
 		}
