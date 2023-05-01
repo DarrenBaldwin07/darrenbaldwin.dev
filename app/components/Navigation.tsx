@@ -3,7 +3,7 @@ import { NavLink } from '@remix-run/react';
 
 const Navigation: React.FC = () => {
 	return (
-		<div className='flex flex-row lg:flex-col space-x-6 lg:space-y-6 lg:space-x-0'>
+		<div className='flex flex-row lg:flex-col justify-between max-w-sm lg:justify-center lg:space-y-6 lg:space-x-0'>
 			<NavLink
 				className={({ isActive }) =>
 					isActive

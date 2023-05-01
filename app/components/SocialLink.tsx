@@ -10,8 +10,8 @@ interface Props {
 
 const SocialLink = ({ image, url, title }: Props) => {
 	return (
-		<a href={url} target='_blank' rel='noreferrer'>
-			<div className='bg-background border border-backgroundSecondary hover:-translate-y-1 hover:bg-[#22272C] transition ease-linear p-4 rounded-lg flex items-center justify-between w-52'>
+		<a href={url} target='_blank' rel='noreferrer' className='w-full'>
+			<div className='bg-background border border-backgroundSecondary hover:-translate-y-1 hover:bg-[#22272C] transition ease-linear p-4 rounded-lg flex items-center justify-between w-full md:w-52'>
 				<div className='flex items-center'>
 					<img width={24} src={image} alt='linkedin' />
 					<Text styles='text-white ml-2'>{title}</Text>

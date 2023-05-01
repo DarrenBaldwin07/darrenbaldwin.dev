@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 	const [isStarred, setIsStarred] = useState(false);
 
 	return (
-		<div className='overflow-x-hidden relative h-screen'>
+		<div className='overflow-x-hidden'>
 			<Container maxWidth='md' styles='z-10 flex justify-end'>
 				<Tooltip
 					styles='bg-background border-backgroundSecondary'
@@ -40,25 +40,27 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 					</div>
 				</Tooltip>
 			</Container>
-			<img
-				src={gradient1}
-				alt='gradient1'
-				className='absolute -right-[400px] top-[200px] overflow-hidden'
-			/>
-			<img
-				src={gradient3}
-				alt='gradient3'
-				className='absolute -top-[200px] lg:-top-[850px] sm:-top-[300px] md:-top-[400px] left-1/2 -translate-x-1/2 overflow-hidden'
-			/>
-			<Container maxWidth='sm' styles='z-10 pb-12'>
+			<div className='relative'>
+				<img
+					src={gradient1}
+					alt='gradient1'
+					className='absolute -right-[400px] top-[200px]'
+				/>
+				<img
+					src={gradient3}
+					alt='gradient3'
+					className='absolute -top-[200px] lg:-top-[850px] sm:-top-[300px] md:-top-[400px] left-1/2 -translate-x-1/2'
+				/>
+			</div>
+			<Container maxWidth='sm' styles='z-10 pb-12 overflow-y-visible'>
 				<div className='mt-36 flex flex-col lg:flex-row z-10'>
-					<div className='flex flex-col items-center lg:mr-32 mb-12 lg:mb-0'>
+					<div className='flex flex-col lg:items-center mb-12 lg:mr-32 lg:mb-0'>
 						<img
 							src={logo}
 							alt='profile'
-							className='w-20 h-20 min-w-max z-10'
+							className='w-20 h-20 min-w-max z-10 mb-4 lg:mt-0'
 						/>
-						<Text className='text-white mt-4 z-10 font-regular font-sans mb-12'>
+						<Text className='text-white mt-4 z-10 font-regular font-sans mb-12 hidden lg:flex'>
 							@darrenBaldwin03
 						</Text>
 						<Navigation />

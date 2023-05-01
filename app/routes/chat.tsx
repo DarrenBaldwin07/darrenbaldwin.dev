@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 function Chat() {
 	return (
 		<motion.div
-			whileInView={{
+			animate={{
 				opacity: 1,
 				x: 0,
 			}}

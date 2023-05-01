@@ -70,7 +70,7 @@ export default function Index() {
 	const data = useLoaderData();
 	return (
 		<motion.div
-			whileInView={{
+			animate={{
 				opacity: 1,
 				x: 0,
 			}}
@@ -138,7 +138,7 @@ export default function Index() {
 					<strong>Rust</strong>. I’m also an advisor and future Angel
 					Investor in early stage startups.
 				</Text>
-				<div className='mt-12 flex items-center space-x-6'>
+				<div className='mt-12 flex flex-col md:flex-row items-center space-y-6 md:space-x-6 md:space-y-0'>
 					<SocialLink
 						url='https://github.com/DarrenBaldwin07'
 						image={Github}

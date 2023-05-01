@@ -1,11 +1,11 @@
 import React from 'react';
-import { Heading, Text } from '@rapid-web/ui';
+import { Heading } from '@rapid-web/ui';
 import { motion } from 'framer-motion';
 
 function Blog() {
 	return (
 		<motion.div
-			whileInView={{
+			animate={{
 				opacity: 1,
 				x: 0,
 			}}

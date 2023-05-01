@@ -16,7 +16,7 @@ function Oss() {
 	const repos: Repo[] = useLoaderData();
 	return (
 		<motion.div
-			whileInView={{
+			animate={{
 				opacity: 1,
 				x: 0,
 			}}
@@ -27,9 +27,6 @@ function Oss() {
 			transition={{
 				duration: 0.25,
 				ease: 'easeInOut',
-			}}
-			exit={{
-				x: '-100%',
 			}}
 			className='z-10'
 		>
