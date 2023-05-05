@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 	const [isStarred, setIsStarred] = useState(false);
 
 	return (
-		<div className='overflow-x-hidden'>
+		<div className='overflow-x-clip'>
 			<Container maxWidth='md' styles='z-10 flex justify-end'>
 				<Tooltip
 					styles='bg-background border-backgroundSecondary'
