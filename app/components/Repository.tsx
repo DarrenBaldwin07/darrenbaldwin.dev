@@ -20,7 +20,7 @@ const Repository = ({ title, description, stars, url, language, languageColor }:
             <div className='flex items-center justify-between'>
                 <div className='flex items-center gap-2'>
                     <img width={26} src={Github} alt='github' />
-                    <Heading styles='text-white'>{title}</Heading>
+                    <Heading styles='text-white text-2xl md:text-3xl'>{title}</Heading>
                 </div>
                 <div className='flex items-center gap-1 rounded-xl border-[1px] py-1 px-2 border-backgroundSecondary'>
                     <img
