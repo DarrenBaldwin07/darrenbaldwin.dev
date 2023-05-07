@@ -1,5 +1,6 @@
 import { Heading, Text, Flex } from '@rapid-web/ui';
 import { useLoaderData } from '@remix-run/react';
+import type { V2_MetaFunction } from '@remix-run/react';
 import { json } from '@remix-run/node';
 import { formatNumber, getMostUsedLanguage, getLanguageColor } from '~/helpers';
 import SocialLink from '~/components/SocialLink';
@@ -8,6 +9,11 @@ import Twitter from '../../assets/twitter.svg';
 import Code from '../../assets/terminalSolid.svg';
 import LinkedIn from '../../assets/linkedin.svg';
 import { motion } from 'framer-motion';
+
+
+export const meta: V2_MetaFunction = () => {
+	return [{ title: 'Darren Baldwin' }, { name: 'description', content: 'Darren Baldwin - OSS, Startups, Dev tools' }];
+};
 
 export async function loader() {
 	const headers = {
