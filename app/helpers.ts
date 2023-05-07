@@ -548,7 +548,7 @@ export interface Repo {
 
 export const getProjects = async () => {
 	const baseUrl = 'https://api.github.com/repos/';
-	const repoList = ['Cincinnati-Ventures/rapid', 'Cincinnati-Ventures/clerk-rs', 'DarrenBaldwin07/darrenbaldwin.dev', 'Cincinnati-Ventures/vite-react-ts-template'];
+	const repoList = ['Cincinnati-Ventures/rapid', 'Cincinnati-Ventures/clerk-rs', 'Portt-dev/porttDotDev', 'DarrenBaldwin07/darrenbaldwin.dev', 'Cincinnati-Ventures/vite-react-ts-template'];
 
 	const repoData: Array<any> = [];
 
