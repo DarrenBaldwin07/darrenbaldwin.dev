@@ -34,7 +34,7 @@ export default function App() {
 					name='twitter:description'
 					content="Darren Baldwin's portfolio."
 				/>
-				<meta name='twitter:site' content='https://rezon.ai' />
+				<meta name='twitter:site' content='https://darrenbaldwin.dev' />
 				<meta name='twitter:title' content='Darren Baldwin' />
 				<meta
 					name='twitter:image'
