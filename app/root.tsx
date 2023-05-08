@@ -15,7 +15,6 @@ export function links() {
 	return [{ rel: 'stylesheet', href: styles }];
 }
 
-
 export default function App() {
 	return (
 		<html lang='en'>
@@ -25,6 +24,36 @@ export default function App() {
 					name='viewport'
 					content='width=device-width,initial-scale=1'
 				/>
+				<meta
+					name='viewport'
+					content='width=device-width, initial-scale=1.0'
+				/>
+				<meta name='description' content="Darren Baldwin's portfolio" />
+				<meta name='twitter:card' content='summary_large_image' />
+				<meta
+					name='twitter:description'
+					content="Darren Baldwin's portfolio."
+				/>
+				<meta name='twitter:site' content='https://rezon.ai' />
+				<meta name='twitter:title' content='Darren Baldwin' />
+				<meta
+					name='twitter:image'
+					content='https://storage.googleapis.com/cv-framework/ogImage.jpg'
+				/>
+				<meta
+					property='og:image'
+					content='https://storage.googleapis.com/cv-framework/ogImage.jpg'
+				/>
+				<meta property='og:title' content='Darren Baldwin' />
+				<meta
+					property='og:description'
+					content="Darren Baldwin's portfolio"
+				/>
+				<meta
+					property='og:image'
+					content='https://storage.googleapis.com/cv-framework/ogImage.jpg'
+				/>
+				<meta property='og:type' content='website' />
 				<Meta />
 				<Links />
 			</head>

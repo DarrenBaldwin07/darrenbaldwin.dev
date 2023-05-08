@@ -35,9 +35,29 @@ function Oss() {
 					Projects
 				</Heading>
 				<VStack styles='mt-6'>
-					{repos.map(({title, description, language, languageColor, url, stars}, index) => (
-						<Repository key={index} title={title} description={description} language={language} languageColor={languageColor} url={url} stars={stars} />
-					))}
+					{repos.map(
+						(
+							{
+								title,
+								description,
+								language,
+								languageColor,
+								url,
+								stars,
+							},
+							index,
+						) => (
+							<Repository
+								key={index}
+								title={title}
+								description={description}
+								language={language}
+								languageColor={languageColor}
+								url={url}
+								stars={stars}
+							/>
+						),
+					)}
 				</VStack>
 			</div>
 		</motion.div>

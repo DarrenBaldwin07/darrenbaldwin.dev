@@ -10,9 +10,14 @@ import Code from '../../assets/terminalSolid.svg';
 import LinkedIn from '../../assets/linkedin.svg';
 import { motion } from 'framer-motion';
 
-
 export const meta: V2_MetaFunction = () => {
-	return [{ title: 'Darren Baldwin' }, { name: 'description', content: 'Darren Baldwin - OSS, Startups, Dev tools' }];
+	return [
+		{ title: 'Darren Baldwin' },
+		{
+			name: 'description',
+			content: 'Darren Baldwin - OSS, Startups, Dev tools',
+		},
+	];
 };
 
 export async function loader() {
@@ -128,13 +133,20 @@ export default function Index() {
 					</div>
 					<div className='flex space-x-2 items-center'>
 						<img width={26} src={Code} alt='code' />
-						<Text styles='text-white'>
-							Most used language:
-						</Text>
+						<Text styles='text-white'>Most used language:</Text>
 						<Flex styles='items-center gap-2'>
-							<Text styles='text-white'>{data.mostUsedLanguage}</Text>
-							<div className='h-4 w-4 rounded-full' style={{backgroundColor: getLanguageColor(data.mostUsedLanguage)}}  />
-               			 </Flex>
+							<Text styles='text-white'>
+								{data.mostUsedLanguage}
+							</Text>
+							<div
+								className='h-4 w-4 rounded-full'
+								style={{
+									backgroundColor: getLanguageColor(
+										data.mostUsedLanguage,
+									),
+								}}
+							/>
+						</Flex>
 					</div>
 				</div>
 				<Text styles='text-white font-sans mt-8'>
