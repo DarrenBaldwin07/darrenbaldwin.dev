@@ -73,7 +73,7 @@ export async function loader() {
 	};
 
 	return json(loaderResponse, {
-		headers: { 'Cache-Control': 'public, s-maxage=60' },
+		headers: { 'Cache-Control': 'public, s-maxage=80' },
 	});
 }
 
@@ -153,7 +153,7 @@ export default function Index() {
 					I contribute and maintain various open source projects and
 					am very passionate about fullstack web development and
 					performance with tools like <strong>Typescript</strong> and{' '}
-					<strong>Rust</strong>. I’m also an advisor and future Angel
+					<strong>Rust</strong>. I’m also an advisor and Angel
 					Investor in early stage startups.
 				</Text>
 				<div className='mt-12 flex flex-col md:flex-row items-center space-y-6 md:space-x-6 md:space-y-0'>
