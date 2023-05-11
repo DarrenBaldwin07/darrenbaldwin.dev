@@ -38,11 +38,11 @@ export default function App() {
 				<meta name='twitter:title' content='Darren Baldwin' />
 				<meta
 					name='twitter:image'
-					content='https://storage.googleapis.com/cv-framework/ui-banner%20(6).jpg'
+					content='https://storage.googleapis.com/cv-framework/ogImage.jpg'
 				/>
 				<meta
 					property='og:image'
-					content='https://storage.googleapis.com/cv-framework/ui-banner%20(6).jpg'
+					content='https://storage.googleapis.com/cv-framework/ogImage.jpg'
 				/>
 				<meta property='og:title' content='Darren Baldwin' />
 				<meta
