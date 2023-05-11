@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, VStack } from '@rapid-web/ui';
+import { Heading, VStack, Flex, Text } from '@rapid-web/ui';
 import { motion } from 'framer-motion';
 import { getProjects } from '../helpers';
 import { useLoaderData } from '@remix-run/react';
@@ -31,9 +31,14 @@ function Oss() {
 			className='z-10'
 		>
 			<div className='z-10'>
-				<Heading styles='text-white text-3xl tracking-widest font-extrabold'>
-					Projects
-				</Heading>
+				<Flex styles='items-center gap-2'>
+					<Heading styles='text-white text-3xl tracking-widest font-extrabold'>
+						Projects
+					</Heading>
+					<Flex styles='items-center justify-center p-2 rounded-full bg-background border border-backgroundSecondary w-8 h-8'>
+						<Text styles='text-white'>{repos.length}</Text>
+					</Flex>
+				</Flex>
 				<VStack styles='mt-6'>
 					{repos.map(
 						(
