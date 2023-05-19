@@ -560,6 +560,7 @@ export const getProjects = async () => {
 		Authorization: `bearer ${process.env.GITHUB_TOKEN}`,
 	};
 
+
 	const repos = repoList.map(async (repoUrl) => {
 		const req = await fetch(`${baseUrl}${repoUrl}`, {
 			method: 'GET',
