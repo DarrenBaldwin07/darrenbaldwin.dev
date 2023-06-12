@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Text, Tooltip } from '@rapid-web/ui';
 import logo from '../../assets/profile.svg';
-import gradient1 from '../../assets/gradient1.svg';
 import gradient3 from '../../assets/gradient3.svg';
 import Navigation from './Navigation';
 import Star from '../../assets/star-solid.svg';
@@ -41,11 +40,6 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 				</Tooltip>
 			</Container>
 			<div className='relative'>
-				<img
-					src={gradient1}
-					alt='gradient1'
-					className='absolute -right-[400px] top-[200px]'
-				/>
 				<img
 					src={gradient3}
 					alt='gradient3'
