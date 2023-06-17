@@ -15,7 +15,7 @@ const Layout: React.FC<Props> = ({ children }: Props) => {
 				<img
 					src={gradient3}
 					alt='gradient3'
-					className='absolute -top-[350px] sm:-top-[400px] md:-top-[500px] lg:-top-[650px] left-1/2 -translate-x-1/2'
+					className='absolute -top-[250px] sm:-top-[400px] md:-top-[500px] lg:-top-[650px] left-1/2 -translate-x-1/2'
 				/>
 			</div>
 			<Container maxWidth='sm' styles='z-10 pb-12 overflow-y-visible'>
