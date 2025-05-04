@@ -15,13 +15,13 @@ export default function Home() {
 				alt='blue gradient'
 				width={25}
 				height={25}
-				className='mt-2 rounded-sm w-full h-[20px]'
+				className='mt-2 rounded-[4px] w-full h-[20px]'
 			/>
 
 			<div className='flex flex-col gap-6 mt-32'>
 				<h2 className='text-white font-medium text-md'>Currently</h2>
 				<p>
-					I&apos;m working on pivoting{' '}
+					i&apos;m working on pivoting{' '}
 					<a href='https://tembo.io' className='underline'>
 						tembo
 					</a>
@@ -30,8 +30,29 @@ export default function Home() {
 				</p>
 			</div>
 			<p className='mt-4'>
-				Previously worked at various venture-backed startups since 2019. No wins
+				previously worked at various venture-backed startups since 2019. No wins
 				yet :)
+			</p>
+			<p className='mt-16'>
+				you can find more of my work on{' '}
+				<a
+					href='https://github.com/DarrenBaldwin07'
+					target='_blank'
+					className='underline'>
+					Github
+				</a>{' '}
+				and contact me via{' '}
+				<a
+					href='https://x.com/darrenbaldwinjr'
+					target='_blank'
+					className='underline'>
+					X
+				</a>{' '}
+				or{' '}
+				<a href='mailto:darren@darrenbaldwin.dev' className='underline'>
+					email
+				</a>
+				.
 			</p>
 		</div>
 	);
