@@ -22,8 +22,8 @@ export default function Home() {
 				<h2 className='text-white font-medium text-md'>Currently</h2>
 				<p>
 					i&apos;m working on pivoting{' '}
-					<a href='https://tembo.io' className='underline'>
-						tembo
+					<a href='https://tembo.io' className='underline' target='_blank'>
+						Tembo
 					</a>
 					, my company thats building an ai agent tool for software engineering
 					teams—&quot;Monitoring to Pull Requests, autonomously.&quot;
@@ -33,6 +33,7 @@ export default function Home() {
 				previously worked at various venture-backed startups since 2019. No wins
 				yet :)
 			</p>
+
 			<p className='mt-16'>
 				you can find more of my work on{' '}
 				<a
