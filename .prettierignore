@@ -1,0 +1,12 @@
+
+dist
+build
+target
+*.mdx
+.next
+apps/ui/public
+nix
+*.rs
+
+pnpm-lock.yaml
+
