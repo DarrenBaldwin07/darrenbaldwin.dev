@@ -120,3 +120,8 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+::selection {
+	background-color: rgba(15, 24, 93, 0.2);
+	color: #2334b8;
+}
