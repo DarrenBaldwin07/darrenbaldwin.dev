@@ -9,7 +9,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-	title: 'Darren Baldwin',
+	title: {
+		default: 'darren baldwin',
+		template: '%s | darren baldwin',
+	},
 	description: 'i like building companies',
 };
 

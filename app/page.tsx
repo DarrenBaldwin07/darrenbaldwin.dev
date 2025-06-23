@@ -33,6 +33,10 @@ export default function Home() {
 				yet :)
 			</p>
 
+			<div className='flex flex-col gap-6 mt-12'>
+				<h2 className='text-white font-medium text-md'>Writing</h2>
+			</div>
+
 			<p className='mt-16'>
 				you can find more of my work on{' '}
 				<a
