@@ -1,6 +1,14 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+const BLOG_POSTS = [
+	{
+		title: 'hello world',
+		slug: 'hello-world',
+		description: 'an empty blog post',
+	},
+];
+
 export default function Home() {
 	return (
 		<div className='text-gray-400'>
@@ -33,8 +41,17 @@ export default function Home() {
 				yet :)
 			</p>
 
-			<div className='flex flex-col gap-6 mt-12'>
+			<div className='flex flex-col gap-6 mt-20'>
 				<h2 className='text-white font-medium text-md'>Writing</h2>
+				{BLOG_POSTS.map((post) => (
+					<Link
+						href={`/blog/${post.slug}`}
+						key={post.slug}
+						className='-mx-3 flex flex-col rounded-md px-3 no-underline hover:bg-[#151515] sm:py-3 transition-all duration-100'>
+						<h3 className='text-white font-medium text-md'>{post.title}</h3>
+						<p className='text-gray-400'>{post.description}</p>
+					</Link>
+				))}
 			</div>
 
 			<p className='mt-16'>
