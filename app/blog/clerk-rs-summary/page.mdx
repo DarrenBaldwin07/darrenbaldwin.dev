@@ -1,0 +1,98 @@
+# clerk-rs: The Official Community Rust SDK for Clerk
+
+## Summary
+
+**clerk-rs** is a comprehensive Rust SDK that provides seamless integration with [Clerk](https://clerk.com), a popular authentication and user management platform. This community-maintained library enables Rust developers to easily implement authentication, user management, and session handling in their applications.
+
+## What clerk-rs Does
+
+clerk-rs serves as a bridge between Rust applications and Clerk's authentication services, offering:
+
+### Core Functionality
+- **Complete API Coverage**: Full access to Clerk's Backend API with support for all CRUD operations (GET, POST, PUT, DELETE, PATCH)
+- **User Management**: Create, update, delete, and manage users programmatically
+- **Session Handling**: Validate and manage user sessions with JWT token verification
+- **Organization Management**: Handle organizations, memberships, and invitations
+- **Authentication Flows**: Support for sign-up, sign-in, and various authentication methods
+
+### Web Framework Integration
+clerk-rs provides middleware and guards for popular Rust web frameworks:
+
+- **Actix Web**: Middleware for protecting routes with authentication
+- **Axum**: Layer-based authentication with JWT extraction
+- **Rocket**: Guard-based authentication system
+- **Poem**: Middleware support with route exclusion capabilities
+
+### Key Features
+- **JWT Validation**: Built-in JWT token verification using JWKS (JSON Web Key Set)
+- **Cookie Support**: Session cookie validation for same-origin requests
+- **Memory Caching**: Efficient JWKS caching with `MemoryCacheJwksProvider`
+- **Async/Await**: Full async support with Tokio runtime compatibility
+- **Type Safety**: Strongly typed models and request/response structures
+- **Error Handling**: Comprehensive error handling with proper Rust error types
+
+## Architecture
+
+The SDK is organized into several key modules:
+
+- **`apis/`**: Contains all API endpoint implementations organized by functionality
+- **`models/`**: Rust structs representing Clerk's data models (User, Organization, Session, etc.)
+- **`validators/`**: Framework-specific middleware and authentication validators
+- **`clerk.rs`**: Core client implementation with HTTP methods
+- **`endpoints.rs`**: Endpoint definitions and URL path management
+
+## Production Usage
+
+clerk-rs is actively used in production by several companies including:
+- [Tembo](https://tembo.io) - Cloud Postgres platform
+- [Rezon](https://rezon.ai) - AI platform
+- [Gitar](https://gitar.co) - Development tool
+- [Have I Been Squatted](https://haveibeensquatted.com) - Security service
+
+## Example Use Cases
+
+### Basic API Usage
+```rust
+use clerk_rs::{clerk::Clerk, ClerkConfiguration, endpoints::ClerkGetEndpoint};
+
+let config = ClerkConfiguration::new(None, None, Some("sk_test_key".to_string()), None);
+let client = Clerk::new(config);
+let users = client.get(ClerkGetEndpoint::GetUserList).await?;
+```
+
+### Route Protection with Axum
+```rust
+use axum::{routing::get, Router};
+use clerk_rs::{
+    clerk::Clerk,
+    validators::{axum::ClerkLayer, jwks::MemoryCacheJwksProvider},
+    ClerkConfiguration,
+};
+
+let config = ClerkConfiguration::new(None, None, Some("your_secret_key".to_string()), None);
+let clerk = Clerk::new(config);
+
+let app = Router::new()
+    .route("/protected", get(protected_handler))
+    .layer(ClerkLayer::new(MemoryCacheJwksProvider::new(clerk), None, true));
+```
+
+## Technical Specifications
+
+- **Language**: Rust (Edition 2021)
+- **License**: MIT
+- **HTTP Client**: reqwest (with optional native-tls or rustls-tls)
+- **Async Runtime**: Tokio compatible
+- **Serialization**: serde with JSON support
+- **JWT Handling**: jsonwebtoken crate for token verification
+
+## Why Use clerk-rs?
+
+1. **Community Maintained**: Actively developed and maintained by the Rust community
+2. **Production Ready**: Used by multiple companies in production environments
+3. **Framework Agnostic**: Works with multiple web frameworks or standalone
+4. **Type Safe**: Leverages Rust's type system for compile-time safety
+5. **Performance**: Efficient async implementation with memory caching
+6. **Comprehensive**: Covers all aspects of Clerk's API and authentication flows
+
+clerk-rs makes it easy for Rust developers to integrate robust authentication and user management into their applications without having to implement these complex features from scratch.
