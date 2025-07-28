@@ -1,0 +1,162 @@
+# Clerk-rs: The Official Community Rust SDK for Clerk
+
+## Overview
+
+Clerk-rs is a comprehensive, community-maintained Rust SDK that provides seamless integration with the Clerk authentication and user management platform. As the official Rust implementation of Clerk's backend API, it enables Rust developers to easily incorporate modern authentication, user management, and organization features into their applications.
+
+## What is Clerk-rs?
+
+Clerk-rs is a production-ready SDK that wraps Clerk's REST API in idiomatic Rust code. It provides type-safe interfaces for all Clerk operations, making it easy to manage users, sessions, organizations, and authentication flows in Rust applications. The SDK is actively maintained and frequently updated to stay in sync with Clerk's evolving API.
+
+## Key Features
+
+### 🔐 **Complete Authentication Management**
+- User registration, sign-in, and sign-out flows
+- Multi-factor authentication (MFA) support
+- Password verification and management
+- JWT token handling and validation
+- Session management and verification
+
+### 👥 **User Management**
+- Create, update, and delete users
+- User metadata management
+- Email address and phone number verification
+- Ban/unban user functionality
+- OAuth access token retrieval
+
+### 🏢 **Organization Support**
+- Create and manage organizations
+- Organization membership management
+- Invitation system for organization members
+- Role-based access control
+- Organization metadata handling
+
+### 🛡️ **Security & Validation**
+- JWT verification with JWKS support
+- Session cookie validation
+- Request signing and verification
+- Secure middleware for popular web frameworks
+
+### 🚀 **Framework Integration**
+Built-in middleware and guards for popular Rust web frameworks:
+- **Actix Web**: Middleware for protecting routes
+- **Axum**: Layer-based authentication
+- **Rocket**: Request guards for authentication
+- **Poem**: Middleware support with route exclusion
+
+### 📧 **Communication**
+- Email sending and management
+- SMS messaging capabilities
+- Template management for emails and SMS
+- Preview and revert template functionality
+
+### 🔧 **Developer Experience**
+- Comprehensive type safety with Serde serialization
+- Async/await support with Tokio
+- Memory-cached JWKS provider for performance
+- Extensive documentation and examples
+- Production-ready error handling
+
+## Architecture
+
+The SDK is structured around several core modules:
+
+- **APIs**: Complete coverage of Clerk's REST endpoints
+- **Models**: Type-safe data structures for all Clerk entities
+- **Validators**: Authentication middleware for web frameworks
+- **Configuration**: Flexible setup for different environments
+- **Utilities**: Helper functions for common operations
+
+## Usage Examples
+
+### Basic User Management
+```rust
+use clerk_rs::{clerk::Clerk, ClerkConfiguration, apis::users_api::User};
+
+let config = ClerkConfiguration::new(None, None, Some("sk_test_key".to_string()), None);
+let client = Clerk::new(config);
+
+// Get user list
+let users = User::get_user_list(&client, None, None, None, None, None, None).await?;
+```
+
+### Framework Integration (Axum)
+```rust
+use axum::{routing::get, Router};
+use clerk_rs::{
+    clerk::Clerk,
+    validators::{axum::ClerkLayer, jwks::MemoryCacheJwksProvider},
+    ClerkConfiguration,
+};
+
+let config = ClerkConfiguration::new(None, None, Some("your_secret_key".to_string()), None);
+let clerk = Clerk::new(config);
+
+let app = Router::new()
+    .route("/protected", get(protected_handler))
+    .layer(ClerkLayer::new(MemoryCacheJwksProvider::new(clerk), None, true));
+```
+
+## Production Usage
+
+Clerk-rs is trusted by several production applications:
+
+- **[Tembo](https://tembo.io)** - Postgres platform
+- **[Rezon](https://rezon.ai)** - AI platform
+- **[Gitar](https://gitar.co)** - Development tools
+- **[Have I Been Squatted](https://haveibeensquatted.com)** - Security service
+
+## API Coverage
+
+The SDK provides complete coverage of Clerk's backend API, including:
+
+- **User Management**: CRUD operations, authentication, metadata
+- **Session Management**: Creation, verification, revocation
+- **Organization Management**: Complete org lifecycle
+- **Email/SMS**: Template management and messaging
+- **Webhooks**: Svix integration for event handling
+- **JWT Templates**: Custom token generation
+- **Instance Settings**: Configuration management
+- **Allow/Block Lists**: Access control management
+
+## Installation
+
+Add to your `Cargo.toml`:
+
+```toml
+[dependencies]
+clerk-rs = "0.4.1"
+
+# Optional features for web framework integration
+clerk-rs = { version = "0.4.1", features = ["actix"] }
+clerk-rs = { version = "0.4.1", features = ["axum"] }
+clerk-rs = { version = "0.4.1", features = ["rocket"] }
+clerk-rs = { version = "0.4.1", features = ["poem"] }
+```
+
+## Why Choose Clerk-rs?
+
+1. **Type Safety**: Full Rust type system benefits with compile-time guarantees
+2. **Performance**: Async support with efficient JWKS caching
+3. **Framework Agnostic**: Works with any Rust web framework
+4. **Production Ready**: Used by multiple production applications
+5. **Active Maintenance**: Regular updates to match Clerk API changes
+6. **Comprehensive**: Complete API coverage with examples
+7. **Security First**: Built-in security best practices and validation
+
+## Getting Started
+
+1. **Install the SDK**: Add clerk-rs to your Cargo.toml
+2. **Get API Keys**: Obtain your Clerk secret key from the dashboard
+3. **Configure**: Set up ClerkConfiguration with your credentials
+4. **Integrate**: Add middleware to protect your routes
+5. **Develop**: Use the comprehensive API for user management
+
+Clerk-rs makes it easy to add enterprise-grade authentication and user management to any Rust application, whether you're building a simple API or a complex multi-tenant platform.
+
+## Links
+
+- **GitHub Repository**: [https://github.com/DarrenBaldwin07/clerk-rs](https://github.com/DarrenBaldwin07/clerk-rs)
+- **Crates.io**: [https://crates.io/crates/clerk-rs](https://crates.io/crates/clerk-rs)
+- **Documentation**: [https://docs.rs/clerk-rs](https://docs.rs/clerk-rs)
+- **Clerk Platform**: [https://clerk.com](https://clerk.com)
