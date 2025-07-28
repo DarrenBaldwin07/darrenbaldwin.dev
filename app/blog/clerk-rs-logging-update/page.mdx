@@ -1,0 +1,90 @@
+export const metadata = {
+	title: 'clerk-rs Gets Enhanced Logging Support',
+	alternates: {
+		canonical: '/blog/clerk-rs-logging-update',
+	},
+};
+
+# clerk-rs Gets Enhanced Logging Support
+
+The [clerk-rs](https://github.com/DarrenBaldwin07/clerk-rs) SDK, the official community-maintained Rust SDK for Clerk authentication, has received an important update that enhances its logging capabilities. This update improves debugging and monitoring for developers using Clerk in their Rust applications.
+
+## What's New
+
+The latest update (commit `a3f4219`) introduces the `log` crate as a direct dependency to the clerk-rs SDK. This change ensures that logging functionality is properly integrated throughout the SDK, making it easier for developers to debug authentication flows and monitor SDK behavior.
+
+### Key Changes
+
+- **Added `log` dependency**: The SDK now includes the `log` crate (version 0.4.27) as a direct dependency
+- **Improved debugging**: Better logging support for troubleshooting authentication issues
+- **Enhanced monitoring**: Easier tracking of SDK operations in production environments
+
+## Why This Matters
+
+Previously, developers might have encountered situations where the SDK's internal logging wasn't properly configured or available. This update ensures that:
+
+1. **Consistent Logging**: All SDK operations can now emit proper log messages
+2. **Better Debugging**: Developers can more easily diagnose authentication issues
+3. **Production Monitoring**: Better visibility into SDK behavior in production environments
+
+## How to Use
+
+The logging functionality works with any Rust logging framework that's compatible with the `log` crate, such as `env_logger`, `tracing`, or `log4rs`. Here's a simple example:
+
+```rust
+use clerk_rs::{clerk::Clerk, ClerkConfiguration};
+use env_logger;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    // Initialize logging
+    env_logger::init();
+    
+    let config = ClerkConfiguration::new(
+        None, 
+        None, 
+        Some("sk_test_your_key_here".to_string()), 
+        None
+    );
+    let client = Clerk::new(config);
+    
+    // SDK operations will now emit log messages
+    let users = client.get_user_list(None, None, None, None, None, None).await?;
+    
+    Ok(())
+}
+```
+
+## About clerk-rs
+
+clerk-rs is the official community-maintained Rust SDK for [Clerk](https://clerk.com), providing comprehensive authentication and user management features for Rust applications. The SDK supports multiple web frameworks including:
+
+- **Actix Web**: Full middleware support for protecting routes
+- **Axum**: Layer-based authentication integration
+- **Rocket**: Guard-based route protection
+- **Poem**: Middleware support for authentication
+
+## Production Users
+
+The SDK is trusted by several production applications including:
+- [Tembo](https://tembo.io) - Database platform
+- [Rezon](https://rezon.ai) - AI platform
+- [Gitar](https://gitar.co) - Development tools
+- [Have I Been Squatted](https://haveibeensquatted.com) - Security service
+
+## Get Started
+
+To start using clerk-rs with the enhanced logging support, add it to your `Cargo.toml`:
+
+```toml
+[dependencies]
+clerk-rs = "0.4.1"
+log = "0.4"
+env_logger = "0.10" # or your preferred logging implementation
+```
+
+For more detailed documentation and examples, check out the [official repository](https://github.com/DarrenBaldwin07/clerk-rs) and the [API documentation](https://docs.rs/clerk-rs).
+
+---
+
+*This update demonstrates the ongoing commitment to improving the developer experience with clerk-rs. The addition of proper logging support makes debugging and monitoring much more straightforward for Rust developers using Clerk for authentication.*
