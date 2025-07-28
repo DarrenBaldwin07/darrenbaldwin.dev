@@ -1,0 +1,120 @@
+# Clerk-rs: The Official Community Rust SDK for Clerk
+
+Clerk-rs is a comprehensive, community-maintained Rust SDK that provides seamless integration with the [Clerk](https://clerk.com) authentication platform. As the official Rust binding for Clerk's Backend API, it enables developers to add robust authentication and user management capabilities to their Rust applications.
+
+## What is Clerk-rs?
+
+Clerk-rs is a fully-featured SDK that bridges the gap between Rust applications and Clerk's powerful authentication services. It provides both low-level API access and high-level middleware integrations for popular Rust web frameworks, making it easy to implement authentication in any Rust-based application.
+
+## Key Features
+
+### 🔌 **Complete API Coverage**
+- Full coverage of Clerk's Backend API with auto-generated models and endpoints
+- Support for all CRUD operations (GET, POST, PUT, DELETE, PATCH)
+- Dynamic endpoint support with parameterized requests
+- Comprehensive user, session, and organization management
+
+### 🛡️ **Multi-Framework Middleware Support**
+Built-in authentication middleware for major Rust web frameworks:
+- **Actix-web**: Full middleware support with JWT validation
+- **Axum**: Layer-based authentication middleware
+- **Rocket**: Guard-based authentication system
+- **Poem**: Middleware support for Poem v3
+
+### 🔐 **Advanced Security Features**
+- JWT token validation and verification
+- JWKS (JSON Web Key Set) provider with memory caching
+- Session cookie validation for same-origin requests
+- Automatic token refresh and management
+
+### 📡 **HTTP Client Integration**
+- Built on `reqwest` for reliable HTTP communication
+- Support for both native-TLS and rustls-tls
+- Async/await support throughout the API
+- Comprehensive error handling
+
+## Architecture Overview
+
+The SDK is organized into several key modules:
+
+- **`apis/`**: Auto-generated API clients for all Clerk endpoints
+- **`models/`**: Strongly-typed data models for Clerk entities
+- **`validators/`**: Framework-specific middleware and authentication guards
+- **`endpoints/`**: Endpoint definitions and routing
+- **`clerk.rs`**: Core client implementation
+
+## Usage Examples
+
+### Basic API Client
+```rust
+use clerk_rs::{clerk::Clerk, ClerkConfiguration, endpoints::ClerkGetEndpoint};
+
+let config = ClerkConfiguration::new(None, None, Some("sk_test_key".to_string()), None);
+let client = Clerk::new(config);
+let users = client.get(ClerkGetEndpoint::GetUserList).await?;
+```
+
+### Axum Middleware Integration
+```rust
+use axum::{routing::get, Router};
+use clerk_rs::{
+    clerk::Clerk,
+    validators::{axum::ClerkLayer, jwks::MemoryCacheJwksProvider},
+    ClerkConfiguration,
+};
+
+let config = ClerkConfiguration::new(None, None, Some("your_secret_key".to_string()), None);
+let clerk = Clerk::new(config);
+
+let app = Router::new()
+    .route("/protected", get(protected_handler))
+    .layer(ClerkLayer::new(MemoryCacheJwksProvider::new(clerk), None, true));
+```
+
+## Production Ready
+
+Clerk-rs is actively used in production by several companies including:
+- [Tembo](https://tembo.io) - PostgreSQL cloud platform
+- [Rezon](https://rezon.ai) - AI-powered applications
+- [Gitar](https://gitar.co) - Developer productivity tools
+- [Have I Been Squatted](https://haveibeensquatted.com) - Domain security service
+
+## Technical Specifications
+
+- **Language**: Rust (2021 edition)
+- **Version**: 0.4.1
+- **License**: MIT
+- **Async Runtime**: Tokio-compatible
+- **HTTP Client**: reqwest with JSON and multipart support
+- **Serialization**: Serde with derive support
+
+## Why Choose Clerk-rs?
+
+1. **Official Community Support**: Maintained as the official Rust SDK for Clerk
+2. **Framework Agnostic**: Works with all major Rust web frameworks
+3. **Type Safety**: Fully typed API with compile-time guarantees
+4. **Performance**: Built with Rust's zero-cost abstractions
+5. **Production Tested**: Used by real companies in production environments
+6. **Active Development**: Regularly updated to match Clerk API changes
+
+## Getting Started
+
+Add clerk-rs to your `Cargo.toml`:
+
+```toml
+[dependencies]
+clerk-rs = "0.4.1"
+
+# Enable framework-specific features as needed
+clerk-rs = { version = "0.4.1", features = ["axum"] }
+```
+
+The SDK provides comprehensive examples for each supported framework in the `/examples` directory, making it easy to get started with your preferred Rust web framework.
+
+## Repository
+
+The project is open-source and available on GitHub: [DarrenBaldwin07/clerk-rs](https://github.com/DarrenBaldwin07/clerk-rs)
+
+---
+
+*Clerk-rs represents a significant achievement in bringing enterprise-grade authentication to the Rust ecosystem, combining the security and performance of Rust with the ease-of-use of Clerk's authentication platform.*
