@@ -10,6 +10,7 @@ const BLOG_POSTS = [
 ];
 
 export default function Home() {
+	console.log('Rendering home page');
 	return (
 		<div className='text-gray-400'>
 			<div className='flex flex-col'>
