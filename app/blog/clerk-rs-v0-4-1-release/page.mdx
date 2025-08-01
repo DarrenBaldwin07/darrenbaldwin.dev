@@ -1,0 +1,79 @@
+export const metadata = {
+	title: 'Clerk-rs v0.4.1 Release: Dependency Fix and Code Improvements',
+	alternates: {
+		canonical: '/blog/clerk-rs-v0-4-1-release',
+	},
+};
+
+# Clerk-rs v0.4.1 Release: Dependency Fix and Code Improvements
+
+I'm excited to share the latest update to [clerk-rs](https://github.com/DarrenBaldwin07/clerk-rs), the official community-maintained Clerk SDK for Rust. Version 0.4.1 brings an important dependency fix and code quality improvements.
+
+## What's New in v0.4.1
+
+### Fixed: Missing Log Dependency
+
+The primary focus of this release was resolving a critical dependency issue. The `log` crate was being used throughout the codebase for logging functionality, but wasn't properly declared as a dependency in `Cargo.toml`. This could lead to compilation issues for users depending on their dependency resolution.
+
+**What was fixed:**
+- Added `log = "0.4.27"` to the dependencies in `Cargo.toml`
+- Ensures consistent logging functionality across all features
+- Resolves potential compilation errors for users
+
+### Code Quality Improvements
+
+Along with the dependency fix, the entire codebase received a formatting pass:
+- Applied consistent formatting using the project's rustfmt configuration
+- Improved code readability and maintainability
+- Ensures consistent code style across all 260+ files in the project
+
+## About Clerk-rs
+
+For those new to clerk-rs, it's a comprehensive Rust SDK that provides:
+
+- **Complete Clerk API Coverage**: Full support for all Clerk backend API operations
+- **Web Framework Integration**: Built-in middleware for Actix Web, Axum, Rocket, and Poem
+- **JWT Validation**: Robust session and token validation
+- **Production Ready**: Used by companies like [Tembo](https://tembo.io), [Rezon](https://rezon.ai), and [Gitar](https://gitar.co)
+
+## Quick Example
+
+Here's how easy it is to get started with clerk-rs:
+
+```rust
+use tokio;
+use clerk_rs::{clerk::Clerk, ClerkConfiguration, apis::emails_api::Email};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let config = ClerkConfiguration::new(None, None, Some("sk_test_key".to_string()), None);
+    let client = Clerk::new(config);
+
+    Email::create(&client, Some(your_clerk_email));
+
+    Ok(())
+}
+```
+
+## Getting Started
+
+To use the latest version in your project:
+
+```toml
+[dependencies]
+clerk-rs = "0.4.1"
+```
+
+## Special Thanks
+
+Big thanks to [@shogo-nakano-desu](https://github.com/shogo-nakano-desu) for identifying and fixing the dependency issue in [PR #117](https://github.com/DarrenBaldwin07/clerk-rs/pull/117).
+
+## Looking Forward
+
+This release demonstrates the community-driven nature of clerk-rs. As we continue to keep pace with Clerk's evolving API, community contributions like this one ensure the SDK remains reliable and up-to-date.
+
+If you're building Rust applications that need authentication, give clerk-rs a try. Check out the [repository](https://github.com/DarrenBaldwin07/clerk-rs) for more examples and documentation.
+
+---
+
+*Have questions or feedback about clerk-rs? Feel free to [open an issue](https://github.com/DarrenBaldwin07/clerk-rs/issues) or contribute to the project!*
