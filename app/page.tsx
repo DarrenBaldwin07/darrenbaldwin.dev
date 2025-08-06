@@ -3,6 +3,11 @@ import Image from 'next/image';
 
 const BLOG_POSTS = [
 	{
+		title: 'clerk-rs: The Community-Maintained Clerk SDK for Rust',
+		slug: 'clerk-rs',
+		description: 'Integrating Clerk authentication in Rust applications',
+	},
+	{
 		title: 'hello world',
 		slug: 'hello-world',
 		description: 'an empty blog post',
