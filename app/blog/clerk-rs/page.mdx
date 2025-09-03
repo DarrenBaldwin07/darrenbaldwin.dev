@@ -1,0 +1,117 @@
+export const metadata = {
+	title: 'clerk-rs: The Community-Maintained Clerk SDK for Rust',
+	alternates: {
+		canonical: '/blog/clerk-rs',
+	},
+};
+
+# clerk-rs: The Community-Maintained Clerk SDK for Rust
+
+![Clerk + Rust](https://raw.githubusercontent.com/DarrenBaldwin07/clerk-rs/main/assets/clerk-rs.png)
+
+## Introduction
+
+[Clerk](https://clerk.com) has become one of the most popular authentication providers in the JavaScript ecosystem, providing a smooth developer experience and robust features for user management. While Clerk officially maintains SDKs for JavaScript, they don't have an official Rust SDK - until now! I'm excited to introduce **clerk-rs**, a community-maintained Rust SDK for Clerk's authentication API.
+
+## What is clerk-rs?
+
+clerk-rs is a comprehensive Rust SDK that provides full access to Clerk's backend API. It enables Rust developers to easily integrate Clerk's authentication and user management features into their applications.
+
+Key features include:
+
+- Complete implementation of Clerk's Backend API
+- Support for multiple popular Rust web frameworks (Actix, Axum, Rocket, Poem)
+- JWT validation middleware
+- Type-safe API client
+- Comprehensive documentation
+
+## Getting Started
+
+To use clerk-rs in your Rust project, add it to your `Cargo.toml`:
+
+```toml
+[dependencies]
+clerk-rs = "0.4.1"
+```
+
+### Basic Usage
+
+Here's a simple example of using clerk-rs to make API requests to Clerk:
+
+```rust
+use tokio;
+use clerk_rs::{clerk::Clerk, ClerkConfiguration, endpoints::ClerkGetEndpoint};
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let config = ClerkConfiguration::new(None, None, Some("sk_test_key".to_string()), None);
+    let client = Clerk::new(config);
+
+    let res = client.get(ClerkGetEndpoint::GetUserList).await?;
+
+    Ok(())
+}
+```
+
+### Framework Integration
+
+One of the best features of clerk-rs is its seamless integration with popular Rust web frameworks. Here's how you can protect a route in Axum:
+
+```rust
+use axum::{routing::get, Router};
+use clerk_rs::{
+    clerk::Clerk,
+    validators::{axum::ClerkLayer, jwks::MemoryCacheJwksProvider},
+    ClerkConfiguration,
+};
+
+async fn index() -> &'static str {
+    "Hello world!"
+}
+
+#[tokio::main]
+async fn main() -> std::io::Result<()> {
+    let config = ClerkConfiguration::new(None, None, Some("your_secret_key".to_string()), None);
+    let clerk = Clerk::new(config);
+
+    let app = Router::new()
+        .route("/index", get(index))
+        .layer(ClerkLayer::new(MemoryCacheJwksProvider::new(clerk), None, true));
+
+    let listener = tokio::net::TcpListener::bind("0.0.0.0:8080").await?;
+    axum::serve(listener, app).await
+}
+```
+
+Similar middleware is available for Actix, Rocket, and Poem frameworks, making it easy to secure your API endpoints regardless of which framework you're using.
+
+## Who's Using clerk-rs?
+
+Several production applications are already using clerk-rs:
+
+- [Tembo](https://tembo.io)
+- [Rezon](https://rezon.ai)
+- [Gitar](https://gitar.co)
+- [Have I Been Squatted](https://haveibeensquatted.com)
+
+## How to Contribute
+
+clerk-rs is an open-source project, and contributions are welcome! The project is hosted on [GitHub](https://github.com/DarrenBaldwin07/clerk-rs) where you can:
+
+- Open issues for bugs or feature requests
+- Submit pull requests
+- Help improve documentation
+- Add your company to the list of production users
+
+## Conclusion
+
+clerk-rs brings the power and simplicity of Clerk's authentication to the Rust ecosystem. Whether you're building a simple API or a complex web application, clerk-rs provides the tools you need to implement secure, user-friendly authentication.
+
+Give it a try in your next Rust project, and let us know what you think!
+
+## Resources
+
+- [GitHub Repository](https://github.com/DarrenBaldwin07/clerk-rs)
+- [crates.io Package](https://crates.io/crates/clerk-rs)
+- [API Documentation](https://docs.rs/clerk-rs)
+- [Clerk's Official Documentation](https://clerk.com/docs)
