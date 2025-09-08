@@ -33,7 +33,7 @@ export default function Home() {
 						Tembo
 					</a>
 					, my company thats building an ai agent tool for software engineering
-					teams—&quot;Monitoring to Pull Requests, autonomously.&quot;
+					teams—&quot;background agents for technical teams.&quot;
 				</p>
 			</div>
 			<p className='mt-4'>
