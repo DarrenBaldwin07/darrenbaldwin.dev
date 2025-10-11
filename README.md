@@ -1,3 +1,3 @@
 # darrenbaldwin.dev
 
-Welcome to my personal website repository!
+Hi! Welcome to my personal website repository!
