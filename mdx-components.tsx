@@ -68,7 +68,7 @@ const components = {
 	},
 	code: ({ children, ...props }: ComponentPropsWithoutRef<'code'>) => {
 		const codeHTML = highlight(children as string);
-		return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
+		return <code dangerouslySetInnerHTML={{ __html: children }} {...props} />;
 	},
 	Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
 		<table>
