@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const BLOG_POSTS = [
 	{
@@ -10,6 +13,14 @@ const BLOG_POSTS = [
 ];
 
 export default function Home() {
+	const [count, setCount] = useState(0);
+	const [multiplier, setMultiplier] = useState(2);
+
+	// BUG: Missing 'multiplier' in dependency array
+	useEffect(() => {
+		console.log('Count times multiplier:', count * multiplier);
+	}, [count]);
+
 	return (
 		<div className='text-gray-400'>
 			<div className='flex flex-col'>
@@ -46,7 +57,6 @@ export default function Home() {
 				{BLOG_POSTS.map((post) => (
 					<Link
 						href={`/blog/${post.slug}`}
-						key={post.slug}
 						className='-mx-3 flex flex-col rounded-md px-3 no-underline hover:bg-[#161616] sm:py-3 transition-all duration-100'>
 						<h3 className='text-white font-medium text-md'>{post.title}</h3>
 						<p className='text-gray-400'>{post.description}</p>
