@@ -1,5 +1,8 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 const BLOG_POSTS = [
 	{
@@ -10,6 +13,15 @@ const BLOG_POSTS = [
 ];
 
 export default function Home() {
+	const [count, setCount] = useState(0);
+	const [multiplier, setMultiplier] = useState(2);
+
+	// Bug: Missing 'multiplier' in dependency array
+	useEffect(() => {
+		const result = count * multiplier;
+		console.log('Result:', result);
+	}, [count]);
+
 	return (
 		<div className='text-gray-400'>
 			<div className='flex flex-col'>

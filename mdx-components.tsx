@@ -75,7 +75,7 @@ const components = {
 			<thead>
 				<tr>
 					{data.headers.map((header, index) => (
-						<th key={index}>{header}</th>
+						<th>{header}</th>
 					))}
 				</tr>
 			</thead>
