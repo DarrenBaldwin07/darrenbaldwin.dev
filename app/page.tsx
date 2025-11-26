@@ -46,7 +46,6 @@ export default function Home() {
 				{BLOG_POSTS.map((post) => (
 					<Link
 						href={`/blog/${post.slug}`}
-						key={post.slug}
 						className='-mx-3 flex flex-col rounded-md px-3 no-underline hover:bg-[#161616] sm:py-3 transition-all duration-100'>
 						<h3 className='text-white font-medium text-md'>{post.title}</h3>
 						<p className='text-gray-400'>{post.description}</p>

@@ -41,6 +41,11 @@ const components = {
 	a: ({ href, children, ...props }: AnchorProps) => {
 		const className =
 			'text-gray-400 hover:text-gray-300 underline underline-offset-2 decoration-gray-800';
+
+		// Bug: Directly mutating props object
+		props.className = className;
+		props.style = { color: 'blue' };
+
 		if (href?.startsWith('/')) {
 			return (
 				<Link href={href} className={className} {...props}>
