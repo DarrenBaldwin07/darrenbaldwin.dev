@@ -10,10 +10,30 @@ const inter = Inter({
 
 export const metadata: Metadata = {
 	title: {
-		default: 'darren baldwin',
-		template: '%s | darren baldwin',
+		default: 'Darren Baldwin - Founder & Product Builder',
+		template: '%s | Darren Baldwin',
 	},
-	description: 'i like building companies',
+	description: 'Founder & Product Builder working on Tembo, an AI agent tool for software engineering teams. Previously worked at various venture-backed startups.',
+	keywords: ['Darren Baldwin', 'founder', 'product builder', 'Tembo', 'AI agents', 'software engineering'],
+	authors: [{ name: 'Darren Baldwin', url: 'https://darrenbaldwin.dev' }],
+	creator: 'Darren Baldwin',
+	openGraph: {
+		type: 'website',
+		locale: 'en_US',
+		url: 'https://darrenbaldwin.dev',
+		siteName: 'Darren Baldwin',
+		title: 'Darren Baldwin - Founder & Product Builder',
+		description: 'Founder & Product Builder working on Tembo, an AI agent tool for software engineering teams.',
+	},
+	twitter: {
+		card: 'summary_large_image',
+		site: '@darrenbaldwinjr',
+		creator: '@darrenbaldwinjr',
+	},
+	robots: {
+		index: true,
+		follow: true,
+	},
 };
 
 export default function RootLayout({

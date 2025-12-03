@@ -1,80 +1,67 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
-const BLOG_POSTS = [
-	{
-		title: 'hello world',
-		slug: 'hello-world',
-		description: 'an empty blog post',
-	},
-];
+import { BLOG_POSTS, SOCIAL_LINKS, SITE_INFO } from '@/lib/constants';
+import SectionHeading from '@/components/SectionHeading';
+import BlogPostCard from '@/components/BlogPostCard';
+import ExternalLink from '@/components/ExternalLink';
 
 export default function Home() {
 	return (
-		<div className='text-gray-400'>
-			<div className='flex flex-col'>
-				<Link href='/' className='text-white font-medium text-md'>
-					Darren Baldwin
-				</Link>
-				<p className='font-medium text-md'>Founder & Product Builder</p>
-			</div>
+		<main className='text-gray-400'>
+			<header className='flex flex-col'>
+				<h1 className='text-white font-medium text-md'>
+					<Link href='/' className='text-white font-medium text-md'>
+						{SITE_INFO.name}
+					</Link>
+				</h1>
+				<p className='font-medium text-md'>{SITE_INFO.role}</p>
+			</header>
 			<Image
 				src='/blue.png'
-				alt='blue gradient'
+				alt='Decorative blue gradient banner'
 				width={25}
 				height={25}
 				className='mt-2 rounded-[4px] w-full h-[20px]'
+				priority
 			/>
-			<div className='flex flex-col gap-6 mt-32'>
-				<h2 className='text-white font-medium text-md'>Currently</h2>
+			<section className='flex flex-col gap-6 mt-32' aria-labelledby='currently-heading'>
+				<SectionHeading id='currently-heading'>Currently</SectionHeading>
 				<p>
 					i&apos;m working on pivoting{' '}
-					<a href='https://tembo.io' className='underline' target='_blank'>
+					<ExternalLink href={SITE_INFO.temboUrl}>
 						Tembo
-					</a>
+					</ExternalLink>
 					, my company thats building an ai agent tool for software engineering
 					teams—&quot;background agents for technical teams.&quot;
 				</p>
-			</div>
-			<p className='mt-4'>
-				previously worked at various venture-backed startups since 2019. No wins
-				yet :)
-			</p>
+				<p>
+					previously worked at various venture-backed startups since 2019. No wins
+					yet :)
+				</p>
+			</section>
 
-			<div className='flex flex-col gap-6 mt-20'>
-				<h2 className='text-white font-medium text-md'>Writing</h2>
+			<section className='flex flex-col gap-6 mt-20' aria-labelledby='writing-heading'>
+				<SectionHeading id='writing-heading'>Writing</SectionHeading>
 				{BLOG_POSTS.map((post) => (
-					<Link
-						href={`/blog/${post.slug}`}
-						key={post.slug}
-						className='-mx-3 flex flex-col rounded-md px-3 no-underline hover:bg-[#161616] sm:py-3 transition-all duration-100'>
-						<h3 className='text-white font-medium text-md'>{post.title}</h3>
-						<p className='text-gray-400'>{post.description}</p>
-					</Link>
+					<BlogPostCard key={post.slug} post={post} />
 				))}
-			</div>
+			</section>
 
-			<p className='mt-16'>
+			<footer className='mt-16'>
+				<p>
 				you can find more of my work on{' '}
-				<a
-					href='https://github.com/DarrenBaldwin07'
-					target='_blank'
-					className='underline'>
-					Github
-				</a>{' '}
-				and contact me via{' '}
-				<a
-					href='https://x.com/darrenbaldwinjr'
-					target='_blank'
-					className='underline'>
-					X
-				</a>{' '}
-				or{' '}
-				<a href='mailto:darren@darrenbaldwin.dev' className='underline'>
-					email
-				</a>
-				.
-			</p>
-		</div>
+				{SOCIAL_LINKS.map((link, index) => (
+					<span key={link.name}>
+						<ExternalLink href={link.url}>
+							{link.label}
+						</ExternalLink>
+						{index === 0 && ' and contact me via '}
+						{index === 1 && ' or '}
+						{index === SOCIAL_LINKS.length - 1 && '.'}
+					</span>
+				))}
+				</p>
+			</footer>
+		</main>
 	);
 }
