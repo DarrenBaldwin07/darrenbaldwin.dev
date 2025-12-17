@@ -1,7 +1,11 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Container from '@/components/Container';
+import { logEnvironmentVariables } from '@/lib/env-logger';
 import './globals.css';
+
+// Log environment variables on server startup
+logEnvironmentVariables();
 
 const inter = Inter({
 	subsets: ['latin'],
