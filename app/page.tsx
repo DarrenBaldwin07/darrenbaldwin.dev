@@ -28,12 +28,16 @@ export default function Home() {
 			<div className='flex flex-col gap-6 mt-32'>
 				<h2 className='text-white font-medium text-md'>Currently</h2>
 				<p>
-					i&apos;m working on pivoting{' '}
-					<a href='https://tembo.io' className='underline' target='_blank' rel='noopener noreferrer'>
+					i&apos;m working on{' '}
+					<a
+						href='https://tembo.io'
+						className='underline'
+						target='_blank'
+						rel='noopener noreferrer'>
 						Tembo
 					</a>
 					, my company thats building an ai agent tool for software engineering
-					teams—&quot;background agents for technical teams.&quot;
+					teams—&quot;the background coding agents company&quot;
 				</p>
 			</div>
 			<p className='mt-4'>
