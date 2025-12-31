@@ -1,7 +1,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-const BLOG_POSTS = [
+interface BlogPost {
+	title: string;
+	slug: string;
+	description: string;
+}
+
+const BLOG_POSTS: BlogPost[] = [
 	{
 		title: 'hello world',
 		slug: 'hello-world',
