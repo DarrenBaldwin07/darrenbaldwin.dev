@@ -7,6 +7,13 @@ interface BlogPost {
 	description: string;
 }
 
+const SOCIAL_LINKS = {
+	tembo: 'https://tembo.io',
+	github: 'https://github.com/DarrenBaldwin07',
+	x: 'https://x.com/darrenbaldwinjr',
+	email: 'mailto:darren@darrenbaldwin.dev',
+} as const;
+
 const BLOG_POSTS: BlogPost[] = [
 	{
 		title: 'hello world',
@@ -36,7 +43,7 @@ export default function Home() {
 				<p>
 					i&apos;m working on{' '}
 					<a
-						href='https://tembo.io'
+						href={SOCIAL_LINKS.tembo}
 						className='underline'
 						target='_blank'
 						rel='noopener noreferrer'>
@@ -67,7 +74,7 @@ export default function Home() {
 			<p className='mt-16'>
 				you can find more of my work on{' '}
 				<a
-					href='https://github.com/DarrenBaldwin07'
+					href={SOCIAL_LINKS.github}
 					target='_blank'
 					rel='noopener noreferrer'
 					className='underline'>
@@ -75,14 +82,14 @@ export default function Home() {
 				</a>{' '}
 				and contact me via{' '}
 				<a
-					href='https://x.com/darrenbaldwinjr'
+					href={SOCIAL_LINKS.x}
 					target='_blank'
 					rel='noopener noreferrer'
 					className='underline'>
 					X
 				</a>{' '}
 				or{' '}
-				<a href='mailto:darren@darrenbaldwin.dev' className='underline'>
+				<a href={SOCIAL_LINKS.email} className='underline'>
 					email
 				</a>
 				.
