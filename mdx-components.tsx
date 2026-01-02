@@ -67,7 +67,8 @@ const components = {
 		);
 	},
 	code: ({ children, ...props }: ComponentPropsWithoutRef<'code'>) => {
-		const codeHTML = highlight(children as string);
+		const codeString = typeof children === 'string' ? children : String(children ?? '');
+		const codeHTML = highlight(codeString);
 		return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 	},
 	Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
