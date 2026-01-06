@@ -14,6 +14,21 @@ export const metadata: Metadata = {
 		template: '%s | darren baldwin',
 	},
 	description: 'i like building companies',
+	authors: [{ name: 'Darren Baldwin' }],
+	creator: 'Darren Baldwin',
+	openGraph: {
+		type: 'website',
+		locale: 'en_US',
+		siteName: 'darren baldwin',
+		title: 'darren baldwin',
+		description: 'i like building companies',
+	},
+	twitter: {
+		card: 'summary',
+		title: 'darren baldwin',
+		description: 'i like building companies',
+		creator: '@darrenbaldwin07',
+	},
 };
 
 export default function RootLayout({
