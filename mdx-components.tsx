@@ -8,6 +8,12 @@ type ListProps = ComponentPropsWithoutRef<'ul'>;
 type ListItemProps = ComponentPropsWithoutRef<'li'>;
 type AnchorProps = ComponentPropsWithoutRef<'a'>;
 type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
+type TableProps = {
+	data: {
+		headers: string[];
+		rows: string[][];
+	};
+};
 
 const components = {
 	h1: (props: HeadingProps) => (
@@ -70,7 +76,7 @@ const components = {
 		const codeHTML = highlight(children as string);
 		return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 	},
-	Table: ({ data }: { data: { headers: string[]; rows: string[][] } }) => (
+	Table: ({ data }: TableProps) => (
 		<table>
 			<thead>
 				<tr>
