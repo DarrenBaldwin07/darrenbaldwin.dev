@@ -1,3 +1,7 @@
-export default function Layout({ children }: { children: React.ReactNode }) {
-	return <div className='prose prose-md'>{children}</div>;
+interface LayoutProps {
+	children: React.ReactNode;
+}
+
+export default function Layout({ children }: LayoutProps) {
+	return <div className="prose prose-md">{children}</div>;
 }
