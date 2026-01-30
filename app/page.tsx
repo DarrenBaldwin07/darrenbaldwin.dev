@@ -7,7 +7,9 @@ interface BlogPost {
 	description: string;
 }
 
-const SOCIAL_LINKS = {
+type SocialLinkKey = 'tembo' | 'github' | 'x' | 'email';
+
+const SOCIAL_LINKS: Record<SocialLinkKey, string> = {
 	tembo: 'https://tembo.io',
 	github: 'https://github.com/DarrenBaldwin07',
 	x: 'https://x.com/darrenbaldwinjr',
