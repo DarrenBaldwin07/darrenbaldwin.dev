@@ -11,15 +11,13 @@
 	"dependencies": {
 		"@next/mdx": "^15.3.4",
 		"class-variance-authority": "^0.7.1",
-		"clsx": "^2.1.1",
 		"gray-matter": "^4.0.3",
 		"lucide-react": "^0.507.0",
 		"mdx": "^0.3.1",
 		"next": "16.1.1",
 		"react": "^19.2.3",
 		"react-dom": "^19.2.3",
-		"sugar-high": "^0.9.3",
-		"tailwind-merge": "^3.2.0"
+		"sugar-high": "^0.9.3"
 	},
 	"devDependencies": {
 		"@eslint/eslintrc": "^3",
