@@ -2,7 +2,10 @@ import { ComponentPropsWithoutRef } from 'react';
 import Link from 'next/link';
 import { highlight } from 'sugar-high';
 
-type HeadingProps = ComponentPropsWithoutRef<'h1'>;
+type H1Props = ComponentPropsWithoutRef<'h1'>;
+type H2Props = ComponentPropsWithoutRef<'h2'>;
+type H3Props = ComponentPropsWithoutRef<'h3'>;
+type H4Props = ComponentPropsWithoutRef<'h4'>;
 type ParagraphProps = ComponentPropsWithoutRef<'p'>;
 type ListProps = ComponentPropsWithoutRef<'ul'>;
 type ListItemProps = ComponentPropsWithoutRef<'li'>;
@@ -10,16 +13,16 @@ type AnchorProps = ComponentPropsWithoutRef<'a'>;
 type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
 
 const components = {
-	h1: (props: HeadingProps) => (
+	h1: (props: H1Props) => (
 		<h1 className='font-medium pt-12 mb-0 text-white' {...props} />
 	),
-	h2: (props: HeadingProps) => (
+	h2: (props: H2Props) => (
 		<h2 className='text-zinc-200 font-medium mt-8 mb-3' {...props} />
 	),
-	h3: (props: HeadingProps) => (
+	h3: (props: H3Props) => (
 		<h3 className='text-zinc-200 font-medium mt-8 mb-3' {...props} />
 	),
-	h4: (props: HeadingProps) => (
+	h4: (props: H4Props) => (
 		<h4 className='font-medium text-zinc-200' {...props} />
 	),
 	p: (props: ParagraphProps) => (
