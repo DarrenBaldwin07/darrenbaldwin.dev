@@ -1,11 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
-interface BlogPost {
-	title: string;
-	slug: string;
-	description: string;
-}
+import type { BlogPost } from '@/lib/types';
 
 const SOCIAL_LINKS = {
 	tembo: 'https://tembo.io',
