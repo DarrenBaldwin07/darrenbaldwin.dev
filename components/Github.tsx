@@ -1,5 +1,5 @@
-import type { SVGProps } from 'react';
-const GitHub = (props: SVGProps<SVGSVGElement>) => (
+import type { ReactElement, SVGProps } from 'react';
+const GitHub = (props: SVGProps<SVGSVGElement>): ReactElement => (
 	<svg
 		width='1em'
 		height='1em'
