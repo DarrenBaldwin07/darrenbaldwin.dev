@@ -1,5 +1,5 @@
-import type { SVGProps } from 'react';
-const XformerlyTwitter = (props: SVGProps<SVGSVGElement>) => (
+import type { ReactElement, SVGProps } from 'react';
+const XformerlyTwitter = (props: SVGProps<SVGSVGElement>): ReactElement => (
 	<svg
 		xmlns='http://www.w3.org/2000/svg'
 		width='1em'
