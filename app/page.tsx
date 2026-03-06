@@ -10,7 +10,7 @@ interface BlogPost {
 const SOCIAL_LINKS = {
 	tembo: 'https://tembo.io',
 	github: 'https://github.com/DarrenBaldwin07',
-	x: 'https://x.com/darrenbaldwinjr',
+	x: 'https://x.com/darrenjr',
 	email: 'mailto:darren@darrenbaldwin.dev',
 } as const;
 
