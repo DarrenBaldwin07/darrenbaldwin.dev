@@ -16,6 +16,11 @@ const SOCIAL_LINKS = {
 
 const BLOG_POSTS: BlogPost[] = [
 	{
+		title: 'a joke',
+		slug: 'a-joke',
+		description: 'why do programmers prefer dark mode?',
+	},
+	{
 		title: 'hello world',
 		slug: 'hello-world',
 		description: 'an empty blog post',
