@@ -6,6 +6,8 @@ const XformerlyTwitter = (props: SVGProps<SVGSVGElement>) => (
 		height='1em'
 		fill='none'
 		viewBox='0 0 1200 1227'
+		role='img'
+		aria-label='X'
 		{...props}>
 		<path
 			fill='#fff'

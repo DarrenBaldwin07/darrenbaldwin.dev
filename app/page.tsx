@@ -46,7 +46,8 @@ export default function Home() {
 						href={SOCIAL_LINKS.tembo}
 						className='underline'
 						target='_blank'
-						rel='noopener noreferrer'>
+						rel='noopener noreferrer'
+						aria-label='Tembo (opens in new tab)'>
 						Tembo
 					</a>
 					, my company thats building an ai agent tool for software engineering
@@ -77,7 +78,8 @@ export default function Home() {
 					href={SOCIAL_LINKS.github}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='underline'>
+					className='underline'
+					aria-label='GitHub profile (opens in new tab)'>
 					Github
 				</a>{' '}
 				and contact me via{' '}
@@ -85,7 +87,8 @@ export default function Home() {
 					href={SOCIAL_LINKS.x}
 					target='_blank'
 					rel='noopener noreferrer'
-					className='underline'>
+					className='underline'
+					aria-label='X profile (opens in new tab)'>
 					X
 				</a>{' '}
 				or{' '}
