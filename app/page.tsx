@@ -49,7 +49,7 @@ export default function Home() {
 						rel='noopener noreferrer'>
 						Tembo
 					</a>
-					, my company thats building an ai agent tool for software engineering
+					, my company that&apos;s building an ai agent tool for software engineering
 					teams—&quot;the background coding agents company&quot;
 				</p>
 			</div>
@@ -78,7 +78,7 @@ export default function Home() {
 					target='_blank'
 					rel='noopener noreferrer'
 					className='underline'>
-					Github
+					GitHub
 				</a>{' '}
 				and contact me via{' '}
 				<a
