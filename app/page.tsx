@@ -7,6 +7,30 @@ interface BlogPost {
 	description: string;
 }
 
+interface Project {
+	name: string;
+	description: string;
+	url: string;
+}
+
+const PROJECTS: Project[] = [
+	{
+		name: 'Tembo',
+		description: 'ai agent tool for software engineering teams',
+		url: 'https://tembo.io',
+	},
+	{
+		name: 'juniper',
+		description: 'a lightweight rust framework for building graphql apis',
+		url: 'https://github.com/graphql-rust/juniper',
+	},
+	{
+		name: 'create-rust-app',
+		description: 'set up a modern rust+react web app with a single command',
+		url: 'https://github.com/Wulf/create-rust-app',
+	},
+];
+
 const SOCIAL_LINKS = {
 	tembo: 'https://tembo.io',
 	github: 'https://github.com/DarrenBaldwin07',
@@ -57,6 +81,23 @@ export default function Home() {
 				previously worked at various venture-backed startups since 2019. No wins
 				yet :)
 			</p>
+
+			<div className='flex flex-col gap-6 mt-20'>
+				<h2 className='text-white font-medium text-md'>Projects</h2>
+				{PROJECTS.map((project) => (
+					<a
+						href={project.url}
+						key={project.name}
+						target='_blank'
+						rel='noopener noreferrer'
+						className='-mx-3 flex flex-col rounded-md px-3 no-underline hover:bg-[#161616] sm:py-3 transition-all duration-100'>
+						<h3 className='text-white font-medium text-md'>
+							{project.name}
+						</h3>
+						<p className='text-gray-400'>{project.description}</p>
+					</a>
+				))}
+			</div>
 
 			<div className='flex flex-col gap-6 mt-20'>
 				<h2 className='text-white font-medium text-md'>Writing</h2>
