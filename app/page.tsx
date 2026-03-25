@@ -1,3 +1,5 @@
+// Joke: A SQL query walks into a bar, sees two tables, and asks... "Can I JOIN you?" 🍻
+
 import Link from 'next/link';
 import Image from 'next/image';
 
