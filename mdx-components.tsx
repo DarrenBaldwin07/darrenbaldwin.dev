@@ -9,6 +9,9 @@ type ListItemProps = ComponentPropsWithoutRef<'li'>;
 type AnchorProps = ComponentPropsWithoutRef<'a'>;
 type BlockquoteProps = ComponentPropsWithoutRef<'blockquote'>;
 
+const linkClassName =
+	'text-gray-400 hover:text-gray-300 underline underline-offset-2 decoration-gray-800';
+
 const components = {
 	h1: (props: HeadingProps) => (
 		<h1 className='font-medium pt-12 mb-0 text-white' {...props} />
@@ -39,18 +42,16 @@ const components = {
 		<strong className='font-medium' {...props} />
 	),
 	a: ({ href, children, ...props }: AnchorProps) => {
-		const className =
-			'text-gray-400 hover:text-gray-300 underline underline-offset-2 decoration-gray-800';
 		if (href?.startsWith('/')) {
 			return (
-				<Link href={href} className={className} {...props}>
+				<Link href={href} className={linkClassName} {...props}>
 					{children}
 				</Link>
 			);
 		}
 		if (href?.startsWith('#')) {
 			return (
-				<a href={href} className={className} {...props}>
+				<a href={href} className={linkClassName} {...props}>
 					{children}
 				</a>
 			);
@@ -60,7 +61,7 @@ const components = {
 				href={href}
 				target='_blank'
 				rel='noopener noreferrer'
-				className={className}
+				className={linkClassName}
 				{...props}>
 				{children}
 			</a>
