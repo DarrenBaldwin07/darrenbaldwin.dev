@@ -41,14 +41,24 @@ const components = {
 	a: ({ href, children, ...props }: AnchorProps) => {
 		const className =
 			'text-gray-400 hover:text-gray-300 underline underline-offset-2 decoration-gray-800';
-		if (href?.startsWith('/')) {
+
+		// Handle missing href gracefully
+		if (!href) {
+			return (
+				<span className={className} {...props}>
+					{children}
+				</span>
+			);
+		}
+
+		if (href.startsWith('/')) {
 			return (
 				<Link href={href} className={className} {...props}>
 					{children}
 				</Link>
 			);
 		}
-		if (href?.startsWith('#')) {
+		if (href.startsWith('#')) {
 			return (
 				<a href={href} className={className} {...props}>
 					{children}
