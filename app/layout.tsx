@@ -14,6 +14,11 @@ export const metadata: Metadata = {
 		template: '%s | darren baldwin',
 	},
 	description: 'i like building companies',
+	alternates: {
+		types: {
+			'application/rss+xml': '/feed.xml',
+		},
+	},
 };
 
 export default function RootLayout({
