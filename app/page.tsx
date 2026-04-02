@@ -1,11 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-
-interface BlogPost {
-	title: string;
-	slug: string;
-	description: string;
-}
+import { blogPosts } from '@/lib/blog-posts';
 
 const SOCIAL_LINKS = {
 	tembo: 'https://tembo.io',
@@ -13,14 +8,6 @@ const SOCIAL_LINKS = {
 	x: 'https://x.com/darrenjr',
 	email: 'mailto:darren@darrenbaldwin.dev',
 } as const;
-
-const BLOG_POSTS: BlogPost[] = [
-	{
-		title: 'hello world',
-		slug: 'hello-world',
-		description: 'an empty blog post',
-	},
-];
 
 export default function Home() {
 	return (
@@ -59,8 +46,15 @@ export default function Home() {
 			</p>
 
 			<div className='flex flex-col gap-6 mt-20'>
-				<h2 className='text-white font-medium text-md'>Writing</h2>
-				{BLOG_POSTS.map((post) => (
+				<div className='flex flex-wrap items-baseline gap-x-3 gap-y-1'>
+					<h2 className='text-white font-medium text-md'>Writing</h2>
+					<Link
+						href='/feed.xml'
+						className='text-sm text-gray-500 underline-offset-2 hover:text-gray-400 hover:underline'>
+						RSS
+					</Link>
+				</div>
+				{blogPosts.map((post) => (
 					<Link
 						href={`/blog/${post.slug}`}
 						key={post.slug}
