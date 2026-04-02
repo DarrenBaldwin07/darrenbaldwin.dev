@@ -38,7 +38,8 @@ export default function Home() {
 				height={25}
 				className='mt-2 rounded-[4px] w-full h-[20px]'
 			/>
-			<div className='flex flex-col gap-6 mt-32'>
+			<p className='mt-8 text-lg'>yoooo, welcome to my corner of the internet!</p>
+			<div className='flex flex-col gap-6 mt-24'>
 				<h2 className='text-white font-medium text-md'>Currently</h2>
 				<p>
 					i&apos;m working on{' '}
