@@ -46,10 +46,11 @@ export default function Home() {
 						href={SOCIAL_LINKS.tembo}
 						className='underline'
 						target='_blank'
-						rel='noopener noreferrer'>
+						rel='noopener noreferrer'
+						aria-label='Tembo (opens in new tab)'>
 						Tembo
 					</a>
-					, my company thats building an ai agent tool for software engineering
+					, my company that&apos;s building an ai agent tool for software engineering
 					teams—&quot;the background coding agents company&quot;
 				</p>
 			</div>
