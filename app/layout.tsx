@@ -10,10 +10,10 @@ const inter = Inter({
 
 export const metadata: Metadata = {
 	title: {
-		default: 'darren baldwin',
-		template: '%s | darren baldwin',
+		default: 'Darren Baldwin',
+		template: '%s | Darren Baldwin',
 	},
-	description: 'i like building companies',
+	description: 'Founder & product builder',
 };
 
 export default function RootLayout({
