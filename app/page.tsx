@@ -78,7 +78,7 @@ export default function Home() {
 					target='_blank'
 					rel='noopener noreferrer'
 					className='underline'>
-					Github
+					GitHub
 				</a>{' '}
 				and contact me via{' '}
 				<a
