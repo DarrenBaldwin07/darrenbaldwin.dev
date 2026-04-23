@@ -9,11 +9,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://darrenbaldwin.dev'),
 	title: {
 		default: 'darren baldwin',
 		template: '%s | darren baldwin',
 	},
 	description: 'i like building companies',
+	robots: {
+		index: true,
+		follow: true,
+	},
 };
 
 export default function RootLayout({
