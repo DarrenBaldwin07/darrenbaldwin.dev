@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import Container from '@/components/Container';
 import './globals.css';
@@ -8,12 +8,27 @@ const inter = Inter({
 	variable: '--font-inter',
 });
 
+export const viewport: Viewport = {
+	themeColor: '#000000',
+	colorScheme: 'dark',
+};
+
 export const metadata: Metadata = {
 	title: {
 		default: 'darren baldwin',
 		template: '%s | darren baldwin',
 	},
 	description: 'i like building companies',
+	openGraph: {
+		title: 'darren baldwin',
+		description: 'i like building companies',
+		siteName: 'darren baldwin',
+		type: 'website',
+	},
+	twitter: {
+		card: 'summary',
+		creator: '@darrenjr',
+	},
 };
 
 export default function RootLayout({
