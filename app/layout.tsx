@@ -13,7 +13,21 @@ export const metadata: Metadata = {
 		default: 'darren baldwin',
 		template: '%s | darren baldwin',
 	},
-	description: 'i like building companies',
+	description: 'Founder & Product Builder. Building Tembo.',
+	openGraph: {
+		title: 'Darren Baldwin',
+		description: 'Founder & Product Builder. Building Tembo.',
+		url: 'https://darrenbaldwin.dev',
+		siteName: 'Darren Baldwin',
+		locale: 'en_US',
+		type: 'website',
+	},
+	twitter: {
+		card: 'summary',
+		title: 'Darren Baldwin',
+		description: 'Founder & Product Builder. Building Tembo.',
+		creator: '@darrenjr',
+	},
 };
 
 export default function RootLayout({
