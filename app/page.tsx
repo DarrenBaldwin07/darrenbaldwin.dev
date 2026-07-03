@@ -49,7 +49,7 @@ export default function Home() {
 						rel='noopener noreferrer'>
 						Tembo
 					</a>
-					, my company thats building an ai agent tool for software engineering
+					, my company that's building an AI agent tool for software engineering
 					teams—&quot;the background coding agents company&quot;
 				</p>
 			</div>
