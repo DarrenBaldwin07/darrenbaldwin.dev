@@ -9,11 +9,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL('https://darrenbaldwin.dev'),
 	title: {
 		default: 'darren baldwin',
 		template: '%s | darren baldwin',
 	},
 	description: 'i like building companies',
+	openGraph: {
+		title: 'darren baldwin',
+		description: 'i like building companies',
+		siteName: 'darren baldwin',
+		locale: 'en_US',
+		type: 'website',
+	},
 };
 
 export default function RootLayout({
