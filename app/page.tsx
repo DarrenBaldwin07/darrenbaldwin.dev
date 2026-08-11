@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import ExternalLink from '@/components/ExternalLink';
 
 interface BlogPost {
 	title: string;
@@ -42,13 +43,9 @@ export default function Home() {
 				<h2 className='text-white font-medium text-md'>Currently</h2>
 				<p>
 					i&apos;m working on{' '}
-					<a
-						href={SOCIAL_LINKS.tembo}
-						className='underline'
-						target='_blank'
-						rel='noopener noreferrer'>
+					<ExternalLink href={SOCIAL_LINKS.tembo} className='underline'>
 						Tembo
-					</a>
+					</ExternalLink>
 					, my company thats building an ai agent tool for software engineering
 					teams—&quot;the background coding agents company&quot;
 				</p>
@@ -73,21 +70,13 @@ export default function Home() {
 
 			<p className='mt-16'>
 				you can find more of my work on{' '}
-				<a
-					href={SOCIAL_LINKS.github}
-					target='_blank'
-					rel='noopener noreferrer'
-					className='underline'>
+				<ExternalLink href={SOCIAL_LINKS.github} className='underline'>
 					Github
-				</a>{' '}
+				</ExternalLink>{' '}
 				and contact me via{' '}
-				<a
-					href={SOCIAL_LINKS.x}
-					target='_blank'
-					rel='noopener noreferrer'
-					className='underline'>
+				<ExternalLink href={SOCIAL_LINKS.x} className='underline'>
 					X
-				</a>{' '}
+				</ExternalLink>{' '}
 				or{' '}
 				<a href={SOCIAL_LINKS.email} className='underline'>
 					email
