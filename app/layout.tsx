@@ -13,7 +13,26 @@ export const metadata: Metadata = {
 		default: 'darren baldwin',
 		template: '%s | darren baldwin',
 	},
-	description: 'i like building companies',
+	description: 'founder & product builder. currently building tembo.',
+	metadataBase: new URL('https://darrenbaldwin.dev'),
+	openGraph: {
+		title: 'darren baldwin',
+		description: 'founder & product builder. currently building tembo.',
+		url: 'https://darrenbaldwin.dev',
+		siteName: 'darren baldwin',
+		locale: 'en_US',
+		type: 'website',
+	},
+	twitter: {
+		card: 'summary',
+		title: 'darren baldwin',
+		description: 'founder & product builder. currently building tembo.',
+		creator: '@darrenjr',
+	},
+	robots: {
+		index: true,
+		follow: true,
+	},
 };
 
 export default function RootLayout({
